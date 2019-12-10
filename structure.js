@@ -40,6 +40,27 @@ rooms = {
             },
             411: {
                 ladder: "yellow"
+            },
+            412: {
+                ladder: "yellow"
+            },
+            413: {
+                ladder: "yellow"
+            },
+            414: {
+                ladder: "red"
+            },
+            415: {
+                ladder: "red"
+            },
+            416: {
+                ladder: "red"
+            },
+            417: {
+                ladder: "red"
+            },
+            418: {
+                ladder: "red"
             }
         },
         3: {
