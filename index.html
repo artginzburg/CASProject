@@ -1,29 +1,34 @@
-<html>
+<html lang="zxx">
 
 <head>
-
+        <meta charset="utf-8">
+  <script>
+    function rectClick(e) {
+        var id = e.target.id;
+    
+        if (id == 'R1') str = "Лево Верх"
+        else if (id == 'R2') str = "Лево Низ"
+        else if (id == 'R3') str = "Право Верх"
+        else if (id == 'R4') str = "Право Низ"
+      document.body.innerHTML += `${str}<br>`;
+    //   alert(e.target.id);
+    }
+  </script>
 </head>
 
 <body>
 
-    <svg width="277px" height="257px" viewBox="0 0 277 257" version="1.1" xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink">
-        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g id="Artboard" transform="translate(-140.000000, -159.000000)" fill="#D8D8D8">
-                <rect id="Rectangle" x="140" y="159" width="131" height="121"></rect>
-                <rect id="Rectangle-Copy-2" x="140" y="295" width="131" height="121"></rect>
-                <rect id="Rectangle-Copy" x="286" y="159" width="131" height="121"></rect>
-                <rect id="Rectangle-Copy-3" x="286" y="295" width="131" height="121"></rect>
-            </g>
-        </g>
-    </svg>
-    <script>
-
-        document.getElementById('Rectangle').addEventListener('onclick', function () {
-            document.body.innerHTML += 'maksim';
-        });
-
-    </script>
+  <svg id="svg28" width="277px" height="257px" viewBox="0 0 277 257" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g id="Artboard" transform="translate(-140.000000, -159.000000)" fill="#D8D8D8">
+        <rect onclick="rectClick(evt)" id="R1" x="140" y="159" width="131" height="121"></rect>
+        <rect onclick="rectClick(evt)" id="R2" x="140" y="295" width="131" height="121"></rect>
+        <rect onclick="rectClick(evt)" id="R3" x="286" y="159" width="131" height="121"></rect>
+        <rect onclick="rectClick(evt)" id="R4" x="286" y="295" width="131" height="121"></rect>
+      </g>
+    </g>
+  </svg><br>
 </body>
 
 </html>
