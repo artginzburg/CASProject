@@ -9,6 +9,7 @@ function rectClick(e) {
         }
     }
     console.log(results[id]);
+    console.log(results);
     str = results[id].name;
     document.body.innerHTML += `${str}<br>`;
 }
