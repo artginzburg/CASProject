@@ -3,7 +3,12 @@ rooms = {
         4: {
             401: {
                 ladder: "green",
-                name: "Допустим, Пупа"
+                name: "Допустим, Пупа",
+                projector: true,
+                appletv: false,
+                board: true,
+                seats: 15,
+                additionaly: "3 компьютера, печь Емели"
             },
             402: {
                 ladder: "green"
