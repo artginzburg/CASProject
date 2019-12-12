@@ -50,13 +50,25 @@ rooms = {
                 ladder: "yellow"
             },
             413: {
-                ladder: "yellow"
+                ladder: "yellow",
+                name: "English 6",
+                projector: true,
+                appletv: true,
+                board: "smart",
+                seats: 15,
+                teachercomp: true
             },
             414: {
                 ladder: "red"
             },
             415: {
-                ladder: "red"
+                ladder: "red",
+                name: "English 5",
+                projector: true,
+                appletv: false,
+                board: "smart",
+                seats: 11,
+                teachercomp: true
             },
             416: {
                 ladder: "red"
