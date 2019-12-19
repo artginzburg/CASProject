@@ -2,14 +2,14 @@ function rectClick(e) {
     id = e.target.id;
 
     let results = {};
-    for (key in rooms.levels["4"]) {
+    for (key in rooms.levels["3"]) {
         if (key === id) {
             // results.push({[key]: rooms[key]});
-            results[key] = rooms.levels["4"][key]
+            results[key] = rooms.levels["3"][key]
         }
     }
     console.log(results[id]);
     console.log(results);
-    str = results[id].name;
-    document.body.innerHTML += `${str}<br>`;
+    str = results[id].ladder;
+    document.querySelector('#leftBlock').innerHTML += `${str}<br>`;
 }
