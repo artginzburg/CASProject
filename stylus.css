@@ -1,0 +1,22 @@
+body {
+    padding-top: 20px;
+    color: azure;
+    background: #222224;
+}
+
+#svgFloor3 {
+    display: block;
+    margin: auto;
+}
+
+#leftBlock {
+    outline: 1px solid #fff;
+    width: 340px;
+    height: 600px;
+    padding: 30px;
+    float: right;
+}
+
+tspan {
+    user-select: none;
+}
