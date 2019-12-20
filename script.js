@@ -19,5 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
     for (el of rects) {
         console.log(el);
         el.addEventListener('click', e => rectClick(e));
+        el.addEventListener('mouseenter', e => console.log(e));
     }
 })
