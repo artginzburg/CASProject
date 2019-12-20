@@ -9,8 +9,14 @@ function rectClick(e) {
         }
     }
     console.log(results);
-    str = results[id].ladder;
-    document.querySelector('#leftBlock').innerHTML += `${str}<br>`;
+    str = results[id];
+    document.querySelector('#display').innerHTML = '';
+    if (id)
+        document.querySelector('#display').innerHTML += `<h1>${id}</h1><br>`;
+    if (str.ladder)
+        document.querySelector('#display').innerHTML += `<p>located near the <b>${str.ladder}</b> ladder</p><br>`;
+    if (str.name)
+        document.querySelector('#display').innerHTML += `<p>previously named <b>${str.name}</b></p><br>`;
 }
 
 document.addEventListener('DOMContentLoaded', function() {

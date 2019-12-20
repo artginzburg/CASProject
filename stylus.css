@@ -19,17 +19,18 @@ body {
 
 #svgFloor3 {
     margin: 0 auto;
-    padding: 1em;
+    padding: .5em;
     display: block;
-    height: 90%;
+    height: 95%;
 }
 
-#leftBlock {
+#display {
     outline: 1px solid #fff;
     width: 340px;
     height: 600px;
-    max-height: 80%;
+    max-height: 90%;
     padding: 30px;
     float: right;
     margin: 20px;
+    text-align: center;
 }
