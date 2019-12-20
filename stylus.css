@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Poiret+One&display=swap);
+
 body {
     color: azure;
     background: #222224;
@@ -7,6 +10,11 @@ body {
     align-items: center;
     padding: 0;
     margin: 0;
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1em;
 }
 
 #svgFloor3 {
