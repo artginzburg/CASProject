@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     rects = classes.getElementsByTagName('g');
     for (el of rects) {
         console.log(el);
-        el.addEventListener('click', e => rectClick(e));
+        el.onclick = e => rectClick(e);
         el.addEventListener('mouseenter', e => {
             e.target.getElementsByTagName('rect')[0].setAttribute('opacity', 0.2)
         })

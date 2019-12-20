@@ -106,13 +106,18 @@ rooms = {
                 ladder: "yellow"
             },
             309: {
-                ladder: "red"
+                ladder: "red",
+                name: "Maths 3",
+                projector: true
             },
             310: {
-                ladder: "red"
+                ladder: "red",
+                name: "Maths 2"
             },
             311: {
-                ladder: "red"
+                ladder: "red",
+                name: "Maths 1",
+                projector: true
             }
         }
     }
