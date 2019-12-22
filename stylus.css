@@ -2,8 +2,8 @@
 @import url(https://fonts.googleapis.com/css?family=Poiret+One&display=swap);
 
 body {
-    color: azure;
-    background: #222224;
+    color: #bbb;
+    background-color: #1e1e1e;
     max-width: 100vw;
     max-height: 100vh;
     display: flex;
@@ -24,13 +24,25 @@ body {
     height: 95%;
 }
 
+
 #display {
-    outline: 1px solid #fff;
-    width: 340px;
-    height: 600px;
-    max-height: 90%;
-    padding: 30px;
-    float: right;
-    margin: 20px;
+    display: none;
+    height: 60%;
+    width: 25%;
+    padding: 2em;
+    margin: 0 auto;
     text-align: center;
+    background-color: rgba(25, 25, 25, .5);
+    border-radius: .8em;
+    box-shadow: 0 0 1em black;
+    transition-duration: .15s;
+}
+
+@media (hover:hover) {
+    #display:hover {
+        box-shadow: 0 0 2em white;
+    }
+    #display.hover {
+        box-shadow: 0 0 2em white;
+    }
 }
