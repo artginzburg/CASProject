@@ -14,7 +14,8 @@ rooms = {
                 ladder: "green"
             },
             403: {
-                ladder: "green"
+                ladder: "green",
+                name: "Chemistry"
             },
             404: {
                 ladder: "green",
@@ -44,7 +45,8 @@ rooms = {
                 ladder: "yellow"
             },
             411: {
-                ladder: "yellow"
+                ladder: "yellow",
+                name: "Russian 2"
             },
             412: {
                 ladder: "yellow"
@@ -82,28 +84,40 @@ rooms = {
         },
         3: {
             301: {
-                ladder: "green"
+                ladder: "green",
+                name: "Physics"
             },
             302: {
-                ladder: "green"
+                ladder: "green",
+                name: "Spanish"
             },
-            303: {
-                ladder: "blue"
+            3031: {
+                ladder: "blue",
+                name: "German"
+            },
+            3032: {
+                ladder: "blue",
+                name: "French"
             },
             304: {
-                ladder: "blue"
+                ladder: "blue",
+                name: "History"
             },
             305: {
-                ladder: "blue"
+                ladder: "blue",
+                name: "Geography"
             },
             306: {
-                ladder: "yellow"
+                ladder: "yellow",
+                name: "Russian 3"
             },
             307: {
-                ladder: "yellow"
+                ladder: "yellow",
+                name: "Russian 1"
             },
             308: {
-                ladder: "yellow"
+                ladder: "yellow",
+                name: "Teachers'"
             },
             309: {
                 ladder: "red",
