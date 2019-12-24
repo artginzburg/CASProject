@@ -1,3 +1,10 @@
+function htmlToElement(html) {
+    var template = document.createElement('template');
+    html = html.trim(); // Never return a text node of whitespace as the result
+    template.innerHTML = html;
+    return template.content.firstChild;
+}
+
 function rectClick(e) {
     id = e.target.id;
 
@@ -32,6 +39,8 @@ document.onkeyup = e => {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
+    document.body.appendChild(htmlToElement(floor3))
+
     classes = document.getElementsByTagName('svg').item(0).getElementById('classes');
     rects = classes.getElementsByTagName('g');
     for (el of rects) {
