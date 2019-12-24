@@ -1,6 +1,42 @@
 if (!localStorage.level)
     localStorage.level = 3
 
+function loadFloor(num) {
+    localStorage.level = num
+    for (el of document.getElementsByClassName('svgFloor'))
+        el.parentNode.removeChild(el)
+    
+    document.body.appendChild(htmlToElement(window['floor' + localStorage.level]))
+
+    classes = document.getElementsByTagName('svg').item(0).getElementById('classes');
+    rects = classes.getElementsByTagName('g');
+    for (el of rects) {
+        console.log(el);
+        el.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
+        el.children.item(0).setAttribute('opacity', 0.5);
+
+        if (!el.id.includes('WC'))
+            el.onclick = e => rectClick(e);
+
+        el.addEventListener('mouseenter', e => {
+            e.target.children.item(0).setAttribute('opacity', 0.1);
+            e.target.children.item(0).setAttribute('fill', 'white');
+
+            if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
+                document.getElementById('display').classList.add('hover');
+
+        })
+
+        el.addEventListener('mouseleave', e => {
+            e.target.children.item(0).setAttribute('opacity', 0.5);
+            e.target.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
+
+            if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
+                document.getElementById('display').classList.remove('hover');
+        })
+    }
+}
+
 function htmlToElement(html) {
     var template = document.createElement('template');
     html = html.trim(); // Never return a text node of whitespace as the result
@@ -37,38 +73,16 @@ function closeDisplay() {
     document.querySelector('#display').style.display = 'none';
 }
 document.onkeyup = e => {
+    console.log(e);
+    
     if (e.code === 'Escape')
         closeDisplay()
+    if (e.altKey && e.code === 'Digit4')
+        loadFloor(4)
+    if (e.altKey && e.code === 'Digit3')
+        loadFloor(3)
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-    document.body.appendChild(htmlToElement(window["floor" + localStorage.level]))
-
-    classes = document.getElementsByTagName('svg').item(0).getElementById('classes');
-    rects = classes.getElementsByTagName('g');
-    for (el of rects) {
-        console.log(el);
-        el.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
-        el.children.item(0).setAttribute('opacity', 0.5);
-
-        if (!el.id.includes('WC'))
-            el.onclick = e => rectClick(e);
-
-        el.addEventListener('mouseenter', e => {
-            e.target.children.item(0).setAttribute('opacity', 0.1);
-            e.target.children.item(0).setAttribute('fill', 'white');
-
-            if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
-                document.getElementById('display').classList.add('hover');
-
-        })
-
-        el.addEventListener('mouseleave', e => {
-            e.target.children.item(0).setAttribute('opacity', 0.5);
-            e.target.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
-
-            if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
-                document.getElementById('display').classList.remove('hover');
-        })
-    }
+    loadFloor(localStorage.level)
 })
