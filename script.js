@@ -15,8 +15,10 @@ function loadFloor(num) {
         el.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
         el.children.item(0).setAttribute('opacity', 0.5);
 
-        if (!el.id.includes('WC'))
+        if (!el.id.includes('WC') && !el.id.includes('room')) {
+            el.setAttribute('onclick', '');
             el.onclick = e => rectClick(e);
+        }
 
         el.addEventListener('mouseenter', e => {
             e.target.children.item(0).setAttribute('opacity', 0.1);
@@ -39,8 +41,7 @@ function loadFloor(num) {
 
 function htmlToElement(html) {
     var template = document.createElement('template');
-    html = html.trim(); // Never return a text node of whitespace as the result
-    template.innerHTML = html;
+    template.innerHTML = html.trim();
     return template.content.firstChild;
 }
 
@@ -48,12 +49,11 @@ function rectClick(e) {
     id = e.target.id;
 
     let results = {};
-    for (key in rooms.levels[localStorage.level]) {
-        if (key === id) {
-            // results.push({[key]: rooms[key]});
+
+    for (key in rooms.levels[localStorage.level])
+        if (key === id) 
             results[key] = rooms.levels[localStorage.level][key]
-        }
-    }
+
     console.log(results);
     str = results[id];
     rdbleName = e.target.parentNode.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML;
@@ -61,6 +61,7 @@ function rectClick(e) {
     document.querySelector('#display').style.display = 'block';
 
     document.querySelector('#display').innerHTML = '';
+    
     if (id)
         document.querySelector('#display').innerHTML += `<h1>${rdbleName}</h1><br>`;
     if (str.ladder)
@@ -83,6 +84,6 @@ document.onkeyup = e => {
         loadFloor(3)
 };
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     loadFloor(localStorage.level)
 })

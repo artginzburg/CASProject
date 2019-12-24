@@ -29,7 +29,7 @@ body {
 .svgFloor g text {
     pointer-events: none;
 }
-.svgFloor g rect, .svgFloor g path {
+.svgFloor g[onclick] {
     cursor: pointer;
     transition-duration: .09s;
 }
