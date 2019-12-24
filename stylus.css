@@ -17,11 +17,21 @@ body {
     line-height: 1em;
 }
 
-#svgFloor3 {
+.svgFloor {
     margin: 0 auto;
     padding: .5em;
     display: block;
     height: 95%;
+}
+.svgFloor text {
+    font-family: 'Open Sans', sans-serif;
+}
+.svgFloor g text {
+    pointer-events: none;
+}
+.svgFloor g rect {
+    cursor: pointer;
+    transition-duration: .09s;
 }
 
 
@@ -39,10 +49,7 @@ body {
 }
 
 @media (hover:hover) {
-    #display:hover {
-        box-shadow: 0 0 2em white;
-    }
-    #display.hover {
+    #display:hover, #display.hover {
         box-shadow: 0 0 2em white;
     }
 }
