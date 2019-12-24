@@ -22,6 +22,7 @@ function rectClick(e) {
     if (str.name)
         document.querySelector('#display').innerHTML += `<p>previously named <b>${str.name}</b></p><br>`;
 }
+
 function closeDisplay() {
     document.querySelector('#display').style.display = 'none';
 }
@@ -37,21 +38,25 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(el);
         el.getElementsByTagName('rect')[0].setAttribute('fill', 'rgba(25, 25, 25)');
         el.getElementsByTagName('rect')[0].setAttribute('opacity', 0.5);
-        
-        el.onclick = e => rectClick(e);
+
+        if (!el.id.includes('WC'))
+            el.onclick = e => rectClick(e);
+
         el.addEventListener('mouseenter', e => {
             e.target.getElementsByTagName('rect')[0].setAttribute('opacity', 0.1);
             e.target.getElementsByTagName('rect')[0].setAttribute('fill', 'white');
 
             if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
                 document.getElementById('display').classList.add('hover');
-            
+
         })
+
         el.addEventListener('mouseleave', e => {
             e.target.getElementsByTagName('rect')[0].setAttribute('opacity', 0.5);
             e.target.getElementsByTagName('rect')[0].setAttribute('fill', 'rgba(25, 25, 25)');
 
-            document.getElementById('display').classList.remove('hover');
+            if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
+                document.getElementById('display').classList.remove('hover');
         })
     }
 })

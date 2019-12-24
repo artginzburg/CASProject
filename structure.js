@@ -76,7 +76,8 @@ rooms = {
                 ladder: "red"
             },
             417: {
-                ladder: "red"
+                ladder: "red",
+                projector: true
             },
             418: {
                 ladder: "red"
