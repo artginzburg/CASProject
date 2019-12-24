@@ -39,7 +39,7 @@ rooms = {
             },
             410: {
                 ladder: "blue",
-                name: "А что это, никто не знает"
+                name: "Psychology"
             },
             library: {
                 ladder: "yellow"

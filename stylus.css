@@ -29,11 +29,10 @@ body {
 .svgFloor g text {
     pointer-events: none;
 }
-.svgFloor g rect {
+.svgFloor g rect, .svgFloor g path {
     cursor: pointer;
     transition-duration: .09s;
 }
-
 
 #display {
     display: none;

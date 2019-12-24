@@ -1,3 +1,6 @@
+if (!localStorage.level)
+    localStorage.level = 3
+
 function htmlToElement(html) {
     var template = document.createElement('template');
     html = html.trim(); // Never return a text node of whitespace as the result
@@ -9,10 +12,10 @@ function rectClick(e) {
     id = e.target.id;
 
     let results = {};
-    for (key in rooms.levels["3"]) {
+    for (key in rooms.levels[localStorage.level]) {
         if (key === id) {
             // results.push({[key]: rooms[key]});
-            results[key] = rooms.levels["3"][key]
+            results[key] = rooms.levels[localStorage.level][key]
         }
     }
     console.log(results);
@@ -39,21 +42,21 @@ document.onkeyup = e => {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-    document.body.appendChild(htmlToElement(floor3))
+    document.body.appendChild(htmlToElement(window["floor" + localStorage.level]))
 
     classes = document.getElementsByTagName('svg').item(0).getElementById('classes');
     rects = classes.getElementsByTagName('g');
     for (el of rects) {
         console.log(el);
-        el.getElementsByTagName('rect')[0].setAttribute('fill', 'rgba(25, 25, 25)');
-        el.getElementsByTagName('rect')[0].setAttribute('opacity', 0.5);
+        el.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
+        el.children.item(0).setAttribute('opacity', 0.5);
 
         if (!el.id.includes('WC'))
             el.onclick = e => rectClick(e);
 
         el.addEventListener('mouseenter', e => {
-            e.target.getElementsByTagName('rect')[0].setAttribute('opacity', 0.1);
-            e.target.getElementsByTagName('rect')[0].setAttribute('fill', 'white');
+            e.target.children.item(0).setAttribute('opacity', 0.1);
+            e.target.children.item(0).setAttribute('fill', 'white');
 
             if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
                 document.getElementById('display').classList.add('hover');
@@ -61,8 +64,8 @@ document.addEventListener('DOMContentLoaded', function () {
         })
 
         el.addEventListener('mouseleave', e => {
-            e.target.getElementsByTagName('rect')[0].setAttribute('opacity', 0.5);
-            e.target.getElementsByTagName('rect')[0].setAttribute('fill', 'rgba(25, 25, 25)');
+            e.target.children.item(0).setAttribute('opacity', 0.5);
+            e.target.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
 
             if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
                 document.getElementById('display').classList.remove('hover');
