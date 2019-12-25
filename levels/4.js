@@ -1,5 +1,5 @@
 floor4 = `
-<svg width="438px" class="svgFloor" height="687px" viewBox="0 0 438 687" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="438px" height="687px" class="svgFloor" viewBox="0 0 438 687" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Artboard-Copy-4" transform="translate(-457.000000, -37.000000)">
             <g id="4" transform="translate(457.500000, 38.000000)">
@@ -218,7 +218,7 @@ floor4 = `
                     <g id="M413" transform="translate(344.000000, 185.000000)">
                         <rect id="413" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="58" height="92"></rect>
                         <text id="M.413" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="15.322" y="49">M.413</tspan>
+                            <tspan x="10.322" y="51">M.413</tspan>
                         </text>
                     </g>
                     <g id="M412" transform="translate(281.000000, 185.000000)">

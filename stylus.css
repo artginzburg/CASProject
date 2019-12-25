@@ -16,6 +16,14 @@ body {
     font-weight: 300;
     line-height: 1em;
 }
+* {
+    -webkit-user-select: none;
+    user-select: none;
+}
+#display h1, #display p, #display b {
+    -webkit-user-select: text;
+    user-select: text;
+}
 
 .svgFloor {
     margin: 0 auto;

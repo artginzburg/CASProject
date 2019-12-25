@@ -63,12 +63,16 @@ function rectClick(e) {
     document.querySelector('#display').innerHTML = '';
     
     if (id)
-        document.querySelector('#display').innerHTML += `<h1>${rdbleName}</h1><br>`;
+        document.querySelector('#display').innerHTML += `<h1>${rdbleName}</h1>`;
     if (str.ladder)
-        document.querySelector('#display').innerHTML += `<p>located near the <b>${str.ladder}</b> ladder</p><br>`;
+        document.querySelector('#display').innerHTML += `<p>located near the <b>${str.ladder}</b> ladder</p>`;
     if (str.name)
-        document.querySelector('#display').innerHTML += `<p>previously named <b>${str.name}</b></p><br>`;
+        document.querySelector('#display').innerHTML += `<p>previously named <b>${str.name}</b></p>`;
 }
+
+// function rotateMap(deg = -90) {
+//     document.getElementsByClassName('svgFloor')[0].style.transform = `rotate(${deg}deg)`
+// }
 
 function closeDisplay() {
     document.querySelector('#display').style.display = 'none';
