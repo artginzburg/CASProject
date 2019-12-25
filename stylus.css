@@ -1,5 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Poiret+One&display=swap);
+/* @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Poiret+One&display=swap); */
+@font-face {
+    font-family: 'AdventPro';
+    font-display: swap;
+    src: url('font/AdventPro-Regular.ttf');
+}
 
 body {
     color: #bbb;
@@ -11,7 +16,7 @@ body {
     padding: 0;
     margin: 0;
 
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'AdventPro', sans-serif;
     font-size: 18px;
     font-weight: 300;
     line-height: 1em;
@@ -32,7 +37,7 @@ body {
     height: 95%;
 }
 .svgFloor text {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'AdventPro', sans-serif;
 }
 .svgFloor g text {
     pointer-events: none;
