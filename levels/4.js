@@ -218,7 +218,7 @@ floor4 = `
                     <g id="M413" transform="translate(344.000000, 185.000000)">
                         <rect id="413" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="58" height="92"></rect>
                         <text id="M.413" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="10.322" y="51">M.413</tspan>
+                            <tspan x="15.322" y="49">M.413</tspan>
                         </text>
                     </g>
                     <g id="M412" transform="translate(281.000000, 185.000000)">
