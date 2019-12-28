@@ -6,7 +6,7 @@ if (!localStorage.level || localStorage.level > settings.maxLevel)
     localStorage.level = 3
 
 function loadFloor(num) {
-    if ((localStorage.level != num || document.getElementsByClassName('svgFloor').length == 0) && num <= settings.maxLevel) {
+    if (((localStorage.level != num || (localStorage.level === num || document.getElementsByTagName('svg').length === 0 && num != document.getElementsByTagName('svg')[0].id)) || document.getElementsByClassName('svgFloor').length == 0) && num <= settings.maxLevel) {
         localStorage.level = num
 
         addScript(`levels/${num}.js`, function() {
@@ -14,6 +14,8 @@ function loadFloor(num) {
                 el.parentNode.removeChild(el)
 
             document.body.appendChild(htmlToElement(window['floor' + localStorage.level]))
+
+            document.getElementsByTagName('svg')[0].id = num
 
             classes = document.getElementsByTagName('svg').item(0).getElementById('classes');
             rects = classes.getElementsByTagName('g');
@@ -46,6 +48,11 @@ function loadFloor(num) {
             }
         })
     }
+}
+
+window.onstorage = e => {
+    if (e.key === 'level')
+        loadFloor(e.newValue);
 }
 
 function htmlToElement(html) {
