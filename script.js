@@ -79,9 +79,9 @@ function rectClick(e) {
         document.querySelector('#display').innerHTML += `<p>previously named <b>${str.name}</b></p>`;
 }
 
-// function rotateMap(deg = -90) {
-//     document.getElementsByClassName('svgFloor')[0].style.transform = `rotate(${deg}deg)`
-// }
+function rotateMap(deg = -90) {
+    document.getElementsByClassName('svgFloor')[0].style.transform = `rotate(${deg}deg)`
+}
 
 function closeDisplay() {
     document.querySelector('#display').style.display = 'none';
@@ -108,6 +108,16 @@ function addScript(src, onload = '') {
     script.type = 'text/javascript';
     script.onload = onload;
     script.src = src;
+    script.onerror = function() {
+        text = 'Error loading ' + this.src
+        console.log(text);
+        alert(text);
+        // errorText = document.createElement('p');
+        // errorText.innerText = text;
+        // errorText.style.textAlign = 'center'
+        // errorText.style.margin = 'auto'
+        // document.body.appendChild(errorText)
+    }
     if (findScript(src))
         document.head.removeChild(findScript(src))
     head.appendChild(script);
