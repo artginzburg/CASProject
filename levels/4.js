@@ -140,8 +140,8 @@ floor4 = `
                     <g id="room428" transform="translate(344.000000, 154.000000)" fill="#FFFFFF" opacity="0.1">
                         <rect id="428" x="0" y="0" width="27" height="29"></rect>
                     </g>
-                    <g id="room427" transform="translate(312.000000, 0.000000)">
-                        <path d="M59,91 L0,91 L0,32 L59,32 L59,48 L61,48 L61,0 L122,0 L122,91 L61,91 L61,82 L59,82 L59,91 Z" id="427" fill="#FFFFFF" opacity="0.1"></path>
+                    <g id="427" transform="translate(312.000000, 0.000000)">
+                        <path d="M59,91 L0,91 L0,32 L59,32 L59,48 L61,48 L61,0 L122,0 L122,91 L61,91 L61,82 L59,82 L59,91 Z" id="library" fill="#FFFFFF" opacity="0.1"></path>
                         <text id="Library" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
                             <tspan x="42.597" y="68">Library</tspan>
                         </text>

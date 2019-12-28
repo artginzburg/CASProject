@@ -24,7 +24,7 @@ function loadFloor(num) {
 
                 if (!el.id.includes('WC') && !el.id.includes('room')) {
                     el.setAttribute('onclick', '');
-                    el.onclick = e => rectClick(e);
+                    el.onclick = rectClick;
                 }
 
                 el.addEventListener('mouseenter', e => {
