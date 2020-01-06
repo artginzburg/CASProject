@@ -1,0 +1,317 @@
+
+floor2 = `
+<svg width="438px" height="687px" class="svgFloor" viewBox="0 0 438 687" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2-floor" transform="translate(-421.000000, -37.000000)">
+            <g id="2" transform="translate(421.500000, 38.000000)">
+                <path d="M281.5,685 L155.5,685 L155.5,498 L124.5,498 L124.5,556 L63.5,556 L63.5,590 L0.5,590 L0.5,403 L32.5,403 L32.5,278 L0.5,278 L0.5,93 L63.5,93 L63.5,125 L124.5,125 L124.5,186 L155.5,186 L155.5,0 L281.5,0 L281.5,185 L312.5,185 L312.5,124 L373.5,124 L373.5,92 L436.5,92 L436.5,277 L404.5,277 L404.5,402 L436.5,402 L436.5,589 L373.5,589 L373.5,555 L312.5,555 L312.5,497 L281.5,497 L281.5,685 Z" id="Combined-Shape" stroke="#1E8252" stroke-width="2"></path>
+                <g id="ledders" transform="translate(125.500000, 123.000000)">
+                    <g id="blue-ledder" transform="translate(0.000000, 1.000000)">
+                        <rect id="Rectangle-Copy" fill="#007EFF" x="0" y="0" width="29" height="61"></rect>
+                        <g id="Group" transform="translate(0.500000, 8.500000)" stroke="#FFFFFF" stroke-linecap="square" stroke-width="2">
+                            <path d="M19.5,0.5 L27.5,0.5" id="Line-2-Copy-36"></path>
+                            <path d="M9.5,10.5 L19.5,10.5" id="Line-2-Copy-36"></path>
+                            <path d="M0.5,21.5 L9.5,21.5" id="Line-2-Copy-38"></path>
+                            <path d="M14.5,5.5 L24.5,5.5" id="Line-2-Copy-36" transform="translate(19.500000, 5.500000) rotate(90.000000) translate(-19.500000, -5.500000) "></path>
+                            <path d="M4.5,15.5 L14.5,15.5" id="Line-2-Copy-37" transform="translate(9.500000, 15.500000) rotate(90.000000) translate(-9.500000, -15.500000) "></path>
+                            <path d="M19.5,20.5 L27.5,20.5" id="Line-2-Copy-36"></path>
+                            <path d="M9.5,30.5 L19.5,30.5" id="Line-2-Copy-36"></path>
+                            <path d="M0.5,41.5 L9.5,41.5" id="Line-2-Copy-38"></path>
+                            <path d="M14.5,25.5 L24.5,25.5" id="Line-2-Copy-36" transform="translate(19.500000, 25.500000) rotate(90.000000) translate(-19.500000, -25.500000) "></path>
+                            <path d="M4.5,35.5 L14.5,35.5" id="Line-2-Copy-37" transform="translate(9.500000, 35.500000) rotate(90.000000) translate(-9.500000, -35.500000) "></path>
+                        </g>
+                    </g>
+                    <g id="yellow-ledder" transform="translate(157.000000, 0.000000)">
+                        <rect id="Rectangle-Copy" fill="#FED71A" x="0" y="0" width="29" height="61"></rect>
+                        <g id="Group" transform="translate(0.500000, 8.500000)" stroke="#FFFFFF" stroke-linecap="square" stroke-width="2">
+                            <path d="M19.5,0.5 L27.5,0.5" id="Line-2-Copy-36"></path>
+                            <path d="M9.5,10.5 L19.5,10.5" id="Line-2-Copy-36"></path>
+                            <path d="M0.5,21.5 L9.5,21.5" id="Line-2-Copy-38"></path>
+                            <path d="M14.5,5.5 L24.5,5.5" id="Line-2-Copy-36" transform="translate(19.500000, 5.500000) rotate(90.000000) translate(-19.500000, -5.500000) "></path>
+                            <path d="M4.5,15.5 L14.5,15.5" id="Line-2-Copy-37" transform="translate(9.500000, 15.500000) rotate(90.000000) translate(-9.500000, -15.500000) "></path>
+                            <path d="M19.5,20.5 L27.5,20.5" id="Line-2-Copy-36"></path>
+                            <path d="M9.5,30.5 L19.5,30.5" id="Line-2-Copy-36"></path>
+                            <path d="M0.5,41.5 L9.5,41.5" id="Line-2-Copy-38"></path>
+                            <path d="M14.5,25.5 L24.5,25.5" id="Line-2-Copy-36" transform="translate(19.500000, 25.500000) rotate(90.000000) translate(-19.500000, -25.500000) "></path>
+                            <path d="M4.5,35.5 L14.5,35.5" id="Line-2-Copy-37" transform="translate(9.500000, 35.500000) rotate(90.000000) translate(-9.500000, -35.500000) "></path>
+                        </g>
+                    </g>
+                    <g id="red-ledder" transform="translate(157.000000, 375.000000)">
+                        <rect id="Rectangle-Copy" fill="#EE1E1E" x="0" y="0" width="29" height="58"></rect>
+                        <g id="Group" transform="translate(0.500000, 8.500000)" stroke="#FFFFFF" stroke-linecap="square" stroke-width="2">
+                            <path d="M19.5,0.5 L27.5,0.5" id="Line-2-Copy-36"></path>
+                            <path d="M9.5,10.5 L19.5,10.5" id="Line-2-Copy-36"></path>
+                            <path d="M0.5,21.5 L9.5,21.5" id="Line-2-Copy-38"></path>
+                            <path d="M14.5,5.5 L24.5,5.5" id="Line-2-Copy-36" transform="translate(19.500000, 5.500000) rotate(90.000000) translate(-19.500000, -5.500000) "></path>
+                            <path d="M4.5,15.5 L14.5,15.5" id="Line-2-Copy-37" transform="translate(9.500000, 15.500000) rotate(90.000000) translate(-9.500000, -15.500000) "></path>
+                            <path d="M19.5,20.5 L27.5,20.5" id="Line-2-Copy-36"></path>
+                            <path d="M9.5,30.5 L19.5,30.5" id="Line-2-Copy-36"></path>
+                            <path d="M0.5,41.5 L9.5,41.5" id="Line-2-Copy-38"></path>
+                            <path d="M14.5,25.5 L24.5,25.5" id="Line-2-Copy-36" transform="translate(19.500000, 25.500000) rotate(90.000000) translate(-19.500000, -25.500000) "></path>
+                            <path d="M4.5,35.5 L14.5,35.5" id="Line-2-Copy-37" transform="translate(9.500000, 35.500000) rotate(90.000000) translate(-9.500000, -35.500000) "></path>
+                        </g>
+                    </g>
+                    <g id="green-ledder" transform="translate(0.000000, 376.000000)">
+                        <rect id="Rectangle-Copy" fill="#1E8252" x="0" y="0" width="29" height="58"></rect>
+                        <g id="Group" transform="translate(0.500000, 8.500000)" stroke="#FFFFFF" stroke-linecap="square" stroke-width="2">
+                            <path d="M19.5,0.5 L27.5,0.5" id="Line-2-Copy-36"></path>
+                            <path d="M9.5,10.5 L19.5,10.5" id="Line-2-Copy-36"></path>
+                            <path d="M0.5,21.5 L9.5,21.5" id="Line-2-Copy-38"></path>
+                            <path d="M14.5,5.5 L24.5,5.5" id="Line-2-Copy-36" transform="translate(19.500000, 5.500000) rotate(90.000000) translate(-19.500000, -5.500000) "></path>
+                            <path d="M4.5,15.5 L14.5,15.5" id="Line-2-Copy-37" transform="translate(9.500000, 15.500000) rotate(90.000000) translate(-9.500000, -15.500000) "></path>
+                            <path d="M19.5,20.5 L27.5,20.5" id="Line-2-Copy-36"></path>
+                            <path d="M9.5,30.5 L19.5,30.5" id="Line-2-Copy-36"></path>
+                            <path d="M0.5,41.5 L9.5,41.5" id="Line-2-Copy-38"></path>
+                            <path d="M14.5,25.5 L24.5,25.5" id="Line-2-Copy-36" transform="translate(19.500000, 25.500000) rotate(90.000000) translate(-19.500000, -25.500000) "></path>
+                            <path d="M4.5,35.5 L14.5,35.5" id="Line-2-Copy-37" transform="translate(9.500000, 35.500000) rotate(90.000000) translate(-9.500000, -35.500000) "></path>
+                        </g>
+                    </g>
+                </g>
+                <g id="lines" transform="translate(0.000000, 91.500000)" stroke="#1E8252" stroke-linecap="square" stroke-width="2">
+                    <path d="M373.5,0.5 L373.5,62.5" id="Line"></path>
+                    <path d="M373.5,74.5 L373.5,113.5" id="Line-Copy-2"></path>
+                    <path d="M373.5,125.5 L373.5,185.5" id="Line-Copy-3"></path>
+                    <path d="M342.5,156.5 L342.5,164.5" id="Line-Copy-4"></path>
+                    <path d="M312.5,125.5 L312.5,133.5" id="Line-Copy-16"></path>
+                    <path d="M312.5,146.5 L312.5,164.5" id="Line-Copy-15"></path>
+                    <path d="M342.5,178.5 L342.5,269.5" id="Line-Copy-5"></path>
+                    <path d="M342.5,282.5 L342.5,321.5" id="Line-Copy-6"></path>
+                    <path d="M63.5,427.5 L63.5,446.5" id="Line-Copy-25"></path>
+                    <path d="M155.5,397.5 L155.5,406.5" id="Line-Copy-31"></path>
+                    <path d="M63.5,384.5 L63.5,415.5" id="Line-Copy-27"></path>
+                    <path d="M63.5,458.5 L63.5,465.5" id="Line-Copy-26"></path>
+                    <path d="M312.5,282.5 L312.5,321.5" id="Line-Copy-11"></path>
+                    <path d="M124.5,281.5 L124.5,320.5" id="Line-Copy-21"></path>
+                    <path d="M93.5,281.5 L93.5,320.5" id="Line-Copy-29"></path>
+                    <path d="M312.5,230.5 L312.5,269.5" id="Line-Copy-13"></path>
+                    <path d="M124.5,230.5 L124.5,269.5" id="Line-Copy-22"></path>
+                    <path d="M93.5,230.5 L93.5,269.5" id="Line-Copy-32"></path>
+                    <path d="M312.5,178.5 L312.5,217.5" id="Line-Copy-14"></path>
+                    <path d="M124.5,178.5 L124.5,217.5" id="Line-Copy-23"></path>
+                    <path d="M93.5,178.5 L93.5,217.5" id="Line-Copy-33"></path>
+                    <path d="M124.5,125.5 L124.5,164.5" id="Line-Copy-24"></path>
+                    <path d="M93.5,156.5 L93.5,164.5" id="Line-Copy-38"></path>
+                    <path d="M63.5,137.5 L63.5,185.5" id="Line-Copy-37"></path>
+                    <path d="M63.5,83.5 L63.5,122.5" id="Line-Copy-36"></path>
+                    <path d="M63.5,34.5 L63.5,40.5" id="Line-Copy-34"></path>
+                    <path d="M63.5,52.5 L63.5,71.5" id="Line-Copy-35"></path>
+                    <path d="M281.5,125.5 L281.5,384.5" id="Line-Copy-17"></path>
+                    <path d="M155.5,125.5 L155.5,384.5" id="Line-Copy-19"></path>
+                    <path d="M312.5,334.5 L312.5,375.5" id="Line-Copy-12"></path>
+                    <path d="M124.5,334.5 L124.5,375.5" id="Line-Copy-20"></path>
+                    <path d="M93.5,333.5 L93.5,343.5" id="Line-Copy-30"></path>
+                    <path d="M63.5,311.5 L63.5,372.5" id="Line-Copy-28"></path>
+                    <path d="M373.5,310.5 L373.5,362.5" id="Line-Copy-8"></path>
+                    <path d="M373.5,375.5 L373.5,425.5" id="Line-Copy-9"></path>
+                    <path d="M373.5,438.5 L373.5,462.5" id="Line-Copy-10"></path>
+                    <path d="M342.5,334.5 L342.5,343.5" id="Line-Copy-7"></path>
+                    <path d="M281.5,396.5 L281.5,405.5" id="Line-Copy-18"></path>
+                    <path d="M343.5,32.5 L343.5,61.5" id="Line-Copy"></path>
+                    <path d="M218.5,61.5 L218.5,93.5" id="Line-Copy-39"></path>
+                    <path d="M312.5,62.5 L321.5,62.5" id="Line-2"></path>
+                    <path d="M364.5,62.5 L373.5,62.5" id="Line-2-Copy-2"></path>
+                    <path d="M334.5,62.5 L352.5,62.5" id="Line-2-Copy"></path>
+                    <path d="M198.5,61.5 L238.5,61.5" id="Line-2-Copy-30"></path>
+                    <path d="M251.5,61.5 L280.5,61.5" id="Line-2-Copy-32"></path>
+                    <path d="M156.5,61.5 L185.5,61.5" id="Line-2-Copy-34"></path>
+                    <path d="M251.5,93.5 L280.5,93.5" id="Line-2-Copy-33"></path>
+                    <path d="M156.5,93.5 L185.5,93.5" id="Line-2-Copy-35"></path>
+                    <path d="M198.5,93.5 L238.5,93.5" id="Line-2-Copy-31"></path>
+                    <path d="M373.5,93.5 L436.5,93.5" id="Line-2-Copy-3"></path>
+                    <path d="M342.5,185.5 L404.5,185.5" id="Line-2-Copy-4"></path>
+                    <path d="M343.5,310.5 L405.5,310.5" id="Line-2-Copy-6"></path>
+                    <path d="M342.5,343.5 L373.5,343.5" id="Line-2-Copy-7"></path>
+                    <path d="M373.5,405.5 L435.5,405.5" id="Line-2-Copy-8"></path>
+                    <path d="M342.5,156.5 L373.5,156.5" id="Line-2-Copy-5"></path>
+                    <path d="M281.5,156.5 L312.5,156.5" id="Line-2-Copy-10"></path>
+                    <path d="M124.5,156.5 L155.5,156.5" id="Line-2-Copy-16"></path>
+                    <path d="M63.5,156.5 L93.5,156.5" id="Line-2-Copy-27"></path>
+                    <path d="M0.5,93.5 L63.5,93.5" id="Line-2-Copy-28"></path>
+                    <path d="M0.5,62.5 L63.5,62.5" id="Line-2-Copy-29"></path>
+                    <path d="M281.5,186.5 L312.5,186.5" id="Line-2-Copy-11"></path>
+                    <path d="M124.5,186.5 L155.5,186.5" id="Line-2-Copy-17"></path>
+                    <path d="M124.5,249.5 L155.5,249.5" id="Line-2-Copy-18"></path>
+                    <path d="M281.5,249.5 L312.5,249.5" id="Line-2-Copy-12"></path>
+                    <path d="M281.5,312.5 L312.5,312.5" id="Line-2-Copy-13"></path>
+                    <path d="M124.5,311.5 L155.5,311.5" id="Line-2-Copy-19"></path>
+                    <path d="M32.5,311.5 L93.5,311.5" id="Line-2-Copy-23"></path>
+                    <path d="M32.5,249.5 L93.5,249.5" id="Line-2-Copy-25"></path>
+                    <path d="M32.5,186.5 L93.5,186.5" id="Line-2-Copy-26"></path>
+                    <path d="M281.5,343.5 L312.5,343.5" id="Line-2-Copy-14"></path>
+                    <path d="M124.5,343.5 L155.5,343.5" id="Line-2-Copy-20"></path>
+                    <path d="M63.5,343.5 L92.5,343.5" id="Line-2-Copy-24"></path>
+                    <path d="M1.5,406.5 L63.5,406.5" id="Line-2-Copy-21"></path>
+                    <path d="M1.5,437.5 L63.5,437.5" id="Line-2-Copy-22"></path>
+                    <path d="M124.5,375.5 L312.5,375.5" id="Line-2-Copy-15"></path>
+                    <path d="M124.5,125.5 L312.5,125.5" id="Line-2-Copy-9"></path>
+                </g>
+                <g id="classes" transform="translate(1.500000, 1.000000)">
+                    <g id="room234" transform="translate(342.000000, 402.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="234" x="0" y="0" width="29" height="31"></rect>
+                    </g>
+                    <g id="room233" transform="translate(342.000000, 248.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="233" x="0" y="0" width="29" height="27"></rect>
+                    </g>
+                    <g id="room232" transform="translate(343.000000, 124.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="232" x="0" y="0" width="28" height="28"></rect>
+                    </g>
+                    <g id="room231" transform="translate(312.000000, 124.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="231" x="0" y="0" width="29" height="28"></rect>
+                    </g>
+                    <g id="room230" transform="translate(281.000000, 404.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="230" x="0" y="0" width="29" height="29"></rect>
+                    </g>
+                    <g id="room229" transform="translate(281.000000, 341.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="229" x="0" y="0" width="29" height="61"></rect>
+                    </g>
+                    <g id="room228" transform="translate(281.000000, 278.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="228" x="0" y="0" width="29" height="61"></rect>
+                    </g>
+                    <g id="room227" transform="translate(281.000000, 248.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="227" x="0" y="0" width="29" height="28"></rect>
+                    </g>
+                    <g id="room226" transform="translate(124.000000, 403.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="226" x="0" y="0" width="29" height="30"></rect>
+                    </g>
+                    <g id="room225" transform="translate(124.000000, 341.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="225" x="0" y="0" width="29" height="60"></rect>
+                    </g>
+                    <g id="room224" transform="translate(124.000000, 278.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="224" x="0" y="0" width="29" height="61"></rect>
+                    </g>
+                    <g id="room223" transform="translate(124.000000, 248.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="223" x="0" y="0" width="29" height="28"></rect>
+                    </g>
+                    <g id="room222" transform="translate(63.000000, 403.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="222" x="0" y="0" width="28" height="30"></rect>
+                    </g>
+                    <g id="room221" transform="translate(63.000000, 248.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="221" x="0" y="0" width="28" height="28"></rect>
+                    </g>
+                    <g id="room220" transform="translate(155.000000, 467.000000)">
+                        <rect id="220" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="124" height="216"></rect>
+                        <text id="Assembley-Hall" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="33.748" y="105">Assembley</tspan>
+                            <tspan x="51.682" y="121">Hall</tspan>
+                        </text>
+                    </g>
+                    <g id="room219" transform="translate(155.000000, 0.000000)">
+                        <rect id="219" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="124" height="151"></rect>
+                        <text id="GYM---2" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="39.908" y="79">GYM - 2</tspan>
+                        </text>
+                    </g>
+                    <g id="room218" transform="translate(155.000000, 217.000000)">
+                        <rect id="2018" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="124" height="248"></rect>
+                        <text id="GYM---1" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="41.238" y="127">GYM - 1</tspan>
+                        </text>
+                    </g>
+                    <g id="WC217" transform="translate(281.000000, 435.000000)">
+                        <rect id="217" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="29" height="30"></rect>
+                        <text id="WC" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="6.299" y="18">WC</tspan>
+                        </text>
+                    </g>
+                    <g id="WC216" transform="translate(124.000000, 435.000000)">
+                        <rect id="216" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="29" height="30"></rect>
+                        <text id="WC" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="5.299" y="18">WC</tspan>
+                        </text>
+                    </g>
+                    <g id="WC215" transform="translate(281.000000, 217.000000)">
+                        <rect id="215" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="29" height="29"></rect>
+                        <text id="WC" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="6.299" y="18">WC</tspan>
+                        </text>
+                    </g>
+                    <g id="WC214" transform="translate(124.000000, 217.000000)">
+                        <rect id="214" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="29" height="29"></rect>
+                        <text id="WC" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="6.299" y="18">WC</tspan>
+                        </text>
+                    </g>
+                    <g id="E213" transform="translate(373.000000, 497.000000)">
+                        <rect id="213" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="61" height="90"></rect>
+                        <text id="E.213" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="19.583" y="48">E.213</tspan>
+                        </text>
+                    </g>
+                    <g id="E212" transform="translate(373.000000, 402.000000)">
+                        <rect id="212" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="61" height="93"></rect>
+                        <text id="E.212" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="19.856" y="50">E.212</tspan>
+                        </text>
+                    </g>
+                    <g id="E211" transform="translate(342.000000, 277.000000)">
+                        <rect id="211" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="60" height="123"></rect>
+                        <text id="E.211" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="20.186" y="65">E.211</tspan>
+                        </text>
+                    </g>
+                    <g id="E210" transform="translate(373.000000, 185.000000)">
+                        <rect id="210" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="61" height="90"></rect>
+                        <text id="E.210" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="18.806" y="48">E.210</tspan>
+                        </text>
+                    </g>
+                    <g id="E209" transform="translate(373.000000, 92.000000)">
+                        <rect id="209" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="61" height="91"></rect>
+                        <text id="E.209" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="16.958" y="49">E.209</tspan>
+                        </text>
+                    </g>
+                    <g id="E208" transform="translate(0.000000, 93.000000)">
+                        <rect id="208" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="61" height="59"></rect>
+                        <text id="E.208" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="16.951" y="33">E.208</tspan>
+                        </text>
+                    </g>
+                    <g id="E207" transform="translate(0.000000, 154.000000)">
+                        <rect id="207" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="61" height="29"></rect>
+                        <text id="E.207" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="17.175" y="18">E.207</tspan>
+                        </text>
+                    </g>
+                    <g id="E206" transform="translate(0.000000, 185.000000)">
+                        <rect id="206" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="61" height="91"></rect>
+                        <text id="E.206" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="16.958" y="49">E.206</tspan>
+                        </text>
+                    </g>
+                    <g id="E205" transform="translate(32.000000, 278.000000)">
+                        <rect id="205" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="59" height="61"></rect>
+                        <text id="E.205" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="16.203" y="34">E.205</tspan>
+                        </text>
+                    </g>
+                    <g id="E204" transform="translate(32.000000, 341.000000)">
+                        <rect id="204" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="59" height="60"></rect>
+                        <text id="E.204" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="15.818" y="33">E.204</tspan>
+                        </text>
+                    </g>
+                    <g id="E203" transform="translate(0.000000, 403.000000)">
+                        <rect id="203" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="61" height="93"></rect>
+                        <text id="E.203" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="17.203" y="50">E.203</tspan>
+                        </text>
+                    </g>
+                    <g id="E202" transform="translate(0.000000, 498.000000)">
+                        <rect id="202" fill="#FFFFFF" opacity="0.200000003" x="0" y="0" width="61" height="29"></rect>
+                        <text id="E.202" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="17.476" y="18">E.202</tspan>
+                        </text>
+                    </g>
+                    <g id="E201" transform="translate(0.000000, 529.000000)">
+                        <polygon id="201" fill="#FFFFFF" opacity="0.1" points="0 0 61 0 61 59 31.0870233 59 0 59"></polygon>
+                        <text id="E.201" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="18.806" y="33">E.201</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+`
