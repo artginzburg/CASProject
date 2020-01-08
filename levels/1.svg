@@ -1,4 +1,5 @@
-<svg class="svgFloor" width="473px" height="610px" viewBox="0 0 473 610" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<svg width="473px" height="610px" viewBox="0 0 473 610" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="1-floor" transform="translate(-460.000000, -78.000000)">
             <g id="1" transform="translate(461.000000, 78.500000)">
@@ -132,173 +133,113 @@
                     <path d="M67,530.5 L67,541.5" id="Line-4-Copy-20"></path>
                 </g>
                 <g id="classes" transform="translate(1.000000, 36.500000)">
-                    <g id="Group-2-Copy-18" transform="translate(0.000000, 438.000000)">
-                        <path d="M65,98 L0,98 L0,0 L65,0 L65,21 L67,21 L67,0 L98,0 L98,66 L67,66 L67,55 L65,55 L65,98 Z" id="Combined-Shape" fill="#FFFFFF" opacity="0.1"></path>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="25.405" y="52">331</tspan>
+                    <g id="F128" transform="translate(404.000000, 506.000000)">
+                        <rect id="128" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="65" height="30"></rect>
+                        <text id="Kitchen" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="13.967" y="18">Kitchen</tspan>
                         </text>
                     </g>
-                    <g id="Group-2-Copy-19" transform="translate(0.000000, 339.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="65" height="63"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="25.405" y="35">331</tspan>
+                    <g id="F127" transform="translate(338.000000, 404.000000)">
+                        <path d="M0,100 L0,0 L64,0 L64,34 L131,34 L131,100 L64,100 L0,100 Z" id="127" fill="#FFFFFF" opacity="0.1"></path>
+                        <text id="Management-Team" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="28.896" y="57">Management</tspan>
+                            <tspan x="49.427" y="73">Team</tspan>
                         </text>
                     </g>
-                    <g id="Group-2-Copy-27" transform="translate(30.000000, 199.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="168" height="138"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="76.405" y="72">331</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-2-Copy-28">
-                        <path d="M0,197 L0,0 L61,0 L61,33 L131,33 L131,167 L164,167 L164,197 L131,197 L0,197 Z" id="Combined-Shape" fill="#FFFFFF" opacity="0.1"></path>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="74.405" y="102">331</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-2-Copy-20" transform="translate(0.000000, 404.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="65" height="32"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="24.405" y="19">331</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-2-Copy-21" transform="translate(100.000000, 404.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="31" height="32"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="7.405" y="19">331</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-2-Copy-24" transform="translate(67.000000, 339.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="31" height="29"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="7.405" y="17">331</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-2-Copy-25" transform="translate(100.000000, 339.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="31" height="29"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="7.405" y="17">331</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-2-Copy-26" transform="translate(133.000000, 339.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="31" height="29"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="7.405" y="17">331</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-2-Copy-30" transform="translate(302.000000, 339.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="66" height="29"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="25.405" y="18">331</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-2-Copy-36" transform="translate(269.000000, 303.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="65" height="34"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="25.405" y="20">331</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-2-Copy-37" transform="translate(269.000000, 269.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="65" height="32"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="25.405" y="19">331</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-2-Copy-43" transform="translate(336.000000, 269.000000)">
-                        <path d="M0,68 L0,0 L32,0 L32,10 L34,10 L34,0 L103,0 L103,68 L34,68 L0,68 Z" id="Combined-Shape" fill="#FFFFFF" opacity="0.1"></path>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="44.405" y="37">331</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-2-Copy-38" transform="translate(269.000000, 235.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="65" height="32"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="25.405" y="19">331</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-2-Copy-39" transform="translate(269.000000, 199.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="65" height="34"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="25.405" y="20">331</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-2-Copy-44" transform="translate(336.000000, 199.000000)">
-                        <path d="M32,68 L0,68 L0,0 L32,0 L32,13 L34,13 L34,0 L103,0 L103,68 L34,68 L34,55 L32,55 L32,68 Z" id="Combined-Shape" fill="#FFFFFF" opacity="0.1"></path>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="44.405" y="37">331</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-2-Copy-40" transform="translate(269.000000, 133.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="31" height="64"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="7.405" y="35">331</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-2-Copy-41" transform="translate(302.000000, 133.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="32" height="33"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="8.405" y="20">331</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-2-Copy-45" transform="translate(408.000000, 110.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="61" height="87"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="23.405" y="47">331</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-2-Copy-46" transform="translate(408.000000, 0.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="61" height="108"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="23.405" y="57">331</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-2-Copy-42" transform="translate(302.000000, 168.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="32" height="29"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="8.405" y="18">331</tspan>
-                        </text>
-                    </g>
-                    <g id="Group-2-Copy-31" transform="translate(404.000000, 370.000000)">
+                    <g id="F126" transform="translate(404.000000, 370.000000)">
                         <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="65" height="66"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="25.405" y="36">331</tspan>
+                        <text id="126" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="17.348" y="30">Shool</tspan>
+                            <tspan x="17.831" y="46">Office</tspan>
                         </text>
                     </g>
-                    <g id="Group-2-Copy-35" transform="translate(404.000000, 506.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="65" height="30"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="25.405" y="18">331</tspan>
+                    <g id="F125" transform="translate(404.000000, 339.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="125" x="0" y="0" width="65" height="29"></rect>
+                    </g>
+                    <g id="F124" transform="translate(370.000000, 339.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="124" x="0" y="0" width="32" height="63"></rect>
+                    </g>
+                    <g id="F123" transform="translate(302.000000, 339.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="123" x="0" y="0" width="66" height="29"></rect>
+                    </g>
+                    <g id="F122" transform="translate(269.000000, 303.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="122" x="0" y="0" width="65" height="34"></rect>
+                    </g>
+                    <g id="F121" transform="translate(336.000000, 269.000000)" fill="#FFFFFF" opacity="0.1">
+                        <path d="M0,68 L0,0 L32,0 L32,10 L34,10 L34,0 L103,0 L103,68 L34,68 L0,68 Z" id="121"></path>
+                    </g>
+                    <g id="F120" transform="translate(269.000000, 269.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="120" x="0" y="0" width="65" height="32"></rect>
+                    </g>
+                    <g id="F119" transform="translate(269.000000, 235.000000)" fill="#FFFFFF" opacity="0.100000001">
+                        <rect id="119" x="0" y="0" width="65" height="32"></rect>
+                    </g>
+                    <g id="F118" transform="translate(336.000000, 199.000000)" fill="#FFFFFF" opacity="0.1">
+                        <path d="M32,68 L0,68 L0,0 L32,0 L32,13 L34,13 L34,0 L103,0 L103,68 L34,68 L34,55 L32,55 L32,68 Z" id="118"></path>
+                    </g>
+                    <g id="F117" transform="translate(269.000000, 199.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="117" x="0" y="0" width="65" height="34"></rect>
+                    </g>
+                    <g id="F116" transform="translate(302.000000, 168.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="116" x="0" y="0" width="32" height="29"></rect>
+                    </g>
+                    <g id="F115" transform="translate(302.000000, 133.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="115" x="0" y="0" width="32" height="33"></rect>
+                    </g>
+                    <g id="F114" transform="translate(269.000000, 133.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="114" x="0" y="0" width="31" height="64"></rect>
+                    </g>
+                    <g id="F113" transform="translate(408.000000, 110.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="113" x="0" y="0" width="61" height="87"></rect>
+                    </g>
+                    <g id="F112" transform="translate(408.000000, 0.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="112" x="0" y="0" width="61" height="108"></rect>
+                    </g>
+                    <g id="F111" transform="translate(133.000000, 133.000000)" fill="#FFFFFF" opacity="0.100000001">
+                        <path d="M0,32 L0,0 L66,0 L66,32 L65,32 L65,64 L33,64 L33,32 L0,32 Z" id="111"></path>
+                    </g>
+                    <g id="F110">
+                        <path d="M0,197 L0,0 L61,0 L61,33 L131,33 L131,167 L164,167 L164,197 L131,197 L0,197 Z" id="110" fill="#FFFFFF" opacity="0.1"></path>
+                        <text id="Maintenance" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="32.697" y="102">Maintenance</tspan>
                         </text>
                     </g>
-                    <g id="Group-2-Copy-34" transform="translate(338.000000, 404.000000)">
-                        <path d="M0,100 L0,0 L64,0 L64,34 L131,34 L131,100 L64,100 L0,100 Z" id="Combined-Shape" fill="#FFFFFF" opacity="0.1"></path>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="35.405" y="63">331</tspan>
+                    <g id="F109" transform="translate(30.000000, 199.000000)">
+                        <rect id="109" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="168" height="138"></rect>
+                        <text id="Cafeteria" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="61.299" y="72">Cafeteria</tspan>
                         </text>
                     </g>
-                    <g id="Group-2-Copy-33" transform="translate(404.000000, 339.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="65" height="29"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="24.405" y="18">331</tspan>
+                    <g id="F108" transform="translate(133.000000, 339.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="108" x="0" y="0" width="31" height="29"></rect>
+                    </g>
+                    <g id="F107" transform="translate(100.000000, 339.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="107" x="0" y="0" width="31" height="29"></rect>
+                    </g>
+                    <g id="F106" transform="translate(67.000000, 339.000000)" fill="#FFFFFF" opacity="0.100000001">
+                        <rect id="106" x="0" y="0" width="31" height="29"></rect>
+                    </g>
+                    <g id="F105" transform="translate(0.000000, 339.000000)">
+                        <rect id="105" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="65" height="63"></rect>
+                        <text id="Medical-Room" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="12.784" y="29">Medical</tspan>
+                            <tspan x="17.131" y="45">Room</tspan>
                         </text>
                     </g>
-                    <g id="Group-2-Copy-32" transform="translate(370.000000, 339.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="32" height="63"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="8.405" y="35">331</tspan>
+                    <g id="F104" transform="translate(0.000000, 404.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="104" x="0" y="0" width="65" height="32"></rect>
+                    </g>
+                    <g id="F103" transform="translate(0.000000, 438.000000)">
+                        <path d="M65,98 L0,98 L0,0 L65,0 L65,21 L67,21 L67,0 L98,0 L98,66 L67,66 L67,55 L65,55 L65,98 Z" id="103" fill="#FFFFFF" opacity="0.1"></path>
+                        <text id="Library" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="14.597" y="52">Library</tspan>
                         </text>
                     </g>
-                    <g id="Group-2-Copy-29" transform="translate(133.000000, 133.000000)">
-                        <path d="M0,32 L0,0 L66,0 L66,32 L65,32 L65,64 L33,64 L33,32 L0,32 Z" id="Combined-Shape" fill="#FFFFFF" opacity="0.1"></path>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="37.405" y="19">331</tspan>
-                        </text>
+                    <g id="F102" transform="translate(100.000000, 404.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="102" x="0" y="0" width="31" height="32"></rect>
                     </g>
-                    <g id="Group-2-Copy-23" transform="translate(100.000000, 438.000000)">
-                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="31" height="66"></rect>
-                        <text id="331" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="7.405" y="36">331</tspan>
-                        </text>
+                    <g id="F101" transform="translate(100.000000, 438.000000)" fill="#FFFFFF" opacity="0.1">
+                        <rect id="101" x="0" y="0" width="31" height="66"></rect>
                     </g>
                 </g>
             </g>
