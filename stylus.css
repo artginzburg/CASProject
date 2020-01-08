@@ -54,23 +54,28 @@ nav {
     display: flex;
     flex-direction: column;
 
-    padding: .9em;
+    padding: 0;
+    margin: .9em;
 }
 
 nav button {
     border: none;
     border-radius: .1em;
     color: #bbb;
-    background-color: #1e1e1e;
+    background-color: rgba(30, 30, 30, .6);
     font-size: 20px;
     padding: .5em;
     transition-duration: .3s;
     transition-delay: .2s;
     cursor: pointer;
+
+    opacity: .9;
 }
 @media (hover:hover) {
     nav button:hover {
         box-shadow: 0 0 1em black;
+        background-color: rgba(30, 30, 30, .9);
+        opacity: 1;
         padding: .7em;
         margin-right: .4em;
         transition-delay: 0;
