@@ -1,5 +1,3 @@
-
-floor2 = `
 <svg width="438px" height="687px" class="svgFloor" viewBox="0 0 438 687" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="2-floor" transform="translate(-421.000000, -37.000000)">
@@ -314,4 +312,3 @@ floor2 = `
         </g>
     </g>
 </svg>
-`

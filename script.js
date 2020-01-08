@@ -28,11 +28,12 @@ function loadFloor(num) {
     if (((localStorage.level != num || (localStorage.level === num || document.getElementsByTagName('svg').length === 0 && num != document.getElementsByTagName('svg')[0].id)) || document.getElementsByClassName('svgFloor').length == 0) && num <= settings.maxLevel) {
         localStorage.level = num
 
-        addScript(`levels/${num}.js`, function() {
+        addScript(`levels/${num}.svg`, function(theSvg) {
             for (el of document.getElementsByClassName('svgFloor'))
                 el.parentNode.removeChild(el)
 
-            document.body.appendChild(htmlToElement(window['floor' + localStorage.level]))
+            // document.body.appendChild(htmlToElement(window['floor' + localStorage.level]))
+            document.body.appendChild(theSvg)
 
             document.getElementsByTagName('svg')[0].id = num
 
@@ -129,13 +130,16 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 function addScript(src, onload = '') {
-    var head = document.getElementsByTagName('head')[0];
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.onload = onload;
-    script.src = src;
-    script.onerror = function() {
-        text = 'Error loading ' + this.src
+    xhr = new XMLHttpRequest();
+    xhr.open('GET', src, false);
+    // Following line is just to be on the safe side;
+    // not needed if your server delivers SVG with correct MIME type
+    xhr.overrideMimeType('image/svg+xml');
+    xhr.send('');
+    if (xhr.responseXML) 
+        onload(xhr.responseXML.documentElement);
+    else {
+        text = 'Error loading ' + src
         console.log(text);
         alert(text);
         // errorText = document.createElement('p');
@@ -144,13 +148,32 @@ function addScript(src, onload = '') {
         // errorText.style.margin = 'auto'
         // document.body.appendChild(errorText)
     }
-    if (findScript(src))
-        document.head.removeChild(findScript(src))
-    head.appendChild(script);
+  
+    // document.getElementById("svgContainer")
+    //   .appendChild(xhr.responseXML.documentElement);
+
+    // var head = document.getElementsByTagName('head')[0];
+    // var script = document.createElement('script');
+    // script.type = 'text/javascript';
+    // script.onload = onload;
+    // script.src = src;
+    // script.onerror = function() {
+    //     text = 'Error loading ' + this.src
+    //     console.log(text);
+    //     alert(text);
+    //     // errorText = document.createElement('p');
+    //     // errorText.innerText = text;
+    //     // errorText.style.textAlign = 'center'
+    //     // errorText.style.margin = 'auto'
+    //     // document.body.appendChild(errorText)
+    // }
+    // if (findScript(src))
+        // document.head.removeChild(findScript(src))
+    // head.appendChild(script);
 }
 
-function findScript(path) {
-    for (script of document.getElementsByTagName('script'))
-        if (script.getAttribute('src') === path)
-            return script
-}
+// function findScript(path) {
+//     for (script of document.getElementsByTagName('script'))
+//         if (script.getAttribute('src') === path)
+//             return script
+// }
