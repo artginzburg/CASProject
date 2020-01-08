@@ -24,6 +24,7 @@ body {
 * {
     -webkit-user-select: none;
     user-select: none;
+    appearance: none;
 }
 #display h1, #display p, #display b {
     -webkit-user-select: text;
@@ -45,6 +46,35 @@ body {
 .svgFloor g[onclick] {
     cursor: pointer;
     transition-duration: .09s;
+}
+
+nav {
+    right: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    padding: .9em;
+}
+
+nav button {
+    border: none;
+    border-radius: .1em;
+    color: #bbb;
+    background-color: #1e1e1e;
+    font-size: 20px;
+    padding: .5em;
+    transition-duration: .3s;
+    transition-delay: .2s;
+    cursor: pointer;
+}
+@media (hover:hover) {
+    nav button:hover {
+        box-shadow: 0 0 1em black;
+        padding: .7em;
+        margin-right: .4em;
+        transition-delay: 0;
+    }
 }
 
 #display {

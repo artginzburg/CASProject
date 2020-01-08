@@ -126,7 +126,13 @@ document.onkeydown = e => {
 };
 
 document.addEventListener('DOMContentLoaded', function() {
-    loadFloor(localStorage.level)
+    loadFloor(localStorage.level);
+    
+    for (el of document.getElementsByTagName('nav')[0].children) {
+        console.log(el.innerHTML);
+        el.onclick = e =>
+            loadFloor(e.toElement.innerHTML);
+    }
 })
 
 function addScript(src, onload = '') {
