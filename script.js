@@ -2,8 +2,27 @@ settings = {
     maxLevel: 4
 }
 
+loadJSON('structure.json', e => {
+    window.rooms = JSON.parse(e)
+    console.log(e)
+})
+
 if (!localStorage.level || localStorage.level > settings.maxLevel)
     localStorage.level = 3
+
+function loadJSON(filename, callback) {
+
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', filename, true);
+    xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+        }
+    };
+    xobj.send(null);
+}
 
 function loadFloor(num) {
     if (((localStorage.level != num || (localStorage.level === num || document.getElementsByTagName('svg').length === 0 && num != document.getElementsByTagName('svg')[0].id)) || document.getElementsByClassName('svgFloor').length == 0) && num <= settings.maxLevel) {
