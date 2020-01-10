@@ -1,6 +1,7 @@
 settings = {
     maxLevel: 4
 }
+oldLevel = 0;
 
 loadJSON('structure.json', e => {
     window.rooms = JSON.parse(e)
@@ -29,43 +30,71 @@ function loadFloor(num) {
         localStorage.level = num
 
         addScript(`levels/${num}.svg`, function(theSvg) {
-            for (el of document.getElementsByClassName('svgFloor'))
-                el.parentNode.removeChild(el)
-
-            // document.body.appendChild(htmlToElement(window['floor' + localStorage.level]))
-            document.body.appendChild(theSvg)
-
-            document.getElementsByTagName('svg')[0].id = num
-
-            classes = document.getElementsByTagName('svg').item(0).getElementById('classes');
-            rects = classes.getElementsByTagName('g');
-            for (el of rects) {
-                console.log(el);
-                el.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
-                el.children.item(0).setAttribute('opacity', 0.5);
-
-                if (!el.id.includes('WC') && !el.id.includes('room')) {
-                    el.setAttribute('onclick', '');
-                    el.onclick = rectClick;
+            animationName = 'bounce';
+            if (typeof document.getElementsByTagName('svg')[0] !== "undefined") {
+                timeoutAnimation = 450
+                for (el of document.getElementsByClassName('svgFloor')) {
+                    oldLevel = el.id
+                    el.classList.remove(animationName + 'InDown');
+                    el.classList.remove(animationName + 'InUp');
+                    if (num > oldLevel) {
+                        el.classList.add(animationName + 'OutDown');
+                    } else {
+                        el.classList.add(animationName + 'OutUp');
+                    }
+                    setTimeout(() => {
+                        el.parentNode.removeChild(el)
+                    }, timeoutAnimation);
                 }
-
-                el.addEventListener('mouseenter', e => {
-                    e.target.children.item(0).setAttribute('opacity', 0.1);
-                    e.target.children.item(0).setAttribute('fill', 'white');
-
-                    if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
-                        document.getElementById('display').classList.add('hover');
-
-                })
-
-                el.addEventListener('mouseleave', e => {
-                    e.target.children.item(0).setAttribute('opacity', 0.5);
-                    e.target.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
-
-                    if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
-                        document.getElementById('display').classList.remove('hover');
-                })
+            } else {
+                timeoutAnimation = 0
             }
+
+            setTimeout(() => {
+                document.body.appendChild(theSvg)
+                theSvg.classList.add('animated');
+                theSvg.classList.add('medDur');
+                if (typeof document.getElementsByTagName('svg')[0] !== "undefined") {
+                    if (num > oldLevel) {
+                        theSvg.classList.add(animationName + 'InDown');
+                    } else {
+                        theSvg.classList.add(animationName + 'InUp')
+                    }
+                }
+    
+                document.getElementsByTagName('svg')[0].id = num
+    
+                classes = document.getElementsByTagName('svg').item(0).getElementById('classes');
+                rects = classes.getElementsByTagName('g');
+                for (el of rects) {
+                    console.log(el);
+                    el.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
+                    el.children.item(0).setAttribute('opacity', 0.5);
+    
+                    if (!el.id.includes('WC') && !el.id.includes('room')) {
+                        el.setAttribute('onclick', '');
+                        el.onclick = rectClick;
+                    }
+    
+                    el.addEventListener('mouseenter', e => {
+                        e.target.children.item(0).setAttribute('opacity', 0.1);
+                        e.target.children.item(0).setAttribute('fill', 'white');
+    
+                        if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
+                            document.getElementById('display').classList.add('hover');
+    
+                    })
+    
+                    el.addEventListener('mouseleave', e => {
+                        e.target.children.item(0).setAttribute('opacity', 0.5);
+                        e.target.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
+    
+                        if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
+                            document.getElementById('display').classList.remove('hover');
+                    })
+                }
+            }, timeoutAnimation);
+            
         })
     }
 }
@@ -94,6 +123,10 @@ function rectClick(e) {
     str = results[id];
     rdbleName = e.target.parentNode.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML;
     document.querySelector('#display').classList.add('hover');
+
+    document.querySelector('#display').classList.remove('zoomOutDown');
+    document.querySelector('#display').classList.add('zoomInDown');
+
     document.querySelector('#display').style.display = 'block';
 
     document.querySelector('#display').innerHTML = '';
@@ -111,7 +144,12 @@ function rotateMap(deg = -90) {
 }
 
 function closeDisplay() {
-    document.querySelector('#display').style.display = 'none';
+    document.querySelector('#display').classList.remove('zoomInDown');
+    document.querySelector('#display').classList.add('zoomOutDown');
+
+    setTimeout(() => {
+        document.querySelector('#display').style.display = 'none';
+    }, 800);
 }
 document.onkeydown = e => {
     // console.log(e);
