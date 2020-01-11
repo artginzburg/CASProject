@@ -30,7 +30,7 @@ function loadFloor(num) {
         localStorage.level = num
 
         addScript(`levels/${num}.svg`, function(theSvg) {
-            animationName = 'bounce';
+            animationName = 'level';
             if (typeof document.getElementsByTagName('svg')[0] !== "undefined") {
                 timeoutAnimation = 450
                 for (el of document.getElementsByClassName('svgFloor')) {
