@@ -4,6 +4,7 @@
     font-family: 'AdventPro';
     font-display: swap;
     src: url('font/AdventPro-Regular.ttf');
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -56,6 +57,7 @@ nav {
 
     padding: 0;
     margin: .9em;
+    z-index: 1;
 }
 
 nav button {
@@ -80,6 +82,9 @@ nav button {
         margin-right: .4em;
         transition-delay: 0;
     }
+}
+nav button.selected {
+    box-shadow: .1rem .4rem .8rem rgba(255, 255, 255, .5);
 }
 
 #display {

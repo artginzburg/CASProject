@@ -26,6 +26,9 @@ function loadJSON(filename, callback) {
 }
 
 function loadFloor(num) {
+    if (typeof document.getElementsByTagName('svg')[0] !== "undefined" && num === document.getElementsByTagName('svg')[0].id)
+        return // prevent multiloads
+
     if (((localStorage.level != num || (localStorage.level === num || document.getElementsByTagName('svg').length === 0 && num != document.getElementsByTagName('svg')[0].id)) || document.getElementsByClassName('svgFloor').length == 0) && num <= settings.maxLevel) {
         localStorage.level = num
 
@@ -39,6 +42,9 @@ function loadFloor(num) {
                     el.classList.remove(animationName + 'InUp');
                     if (num > oldLevel) {
                         el.classList.add(animationName + 'OutDown');
+                    } else if (num === oldLevel) {
+                        el.classList.add('bounceOut');
+                        timeoutAnimation = 700
                     } else {
                         el.classList.add(animationName + 'OutUp');
                     }
@@ -57,6 +63,8 @@ function loadFloor(num) {
                 if (typeof document.getElementsByTagName('svg')[0] !== "undefined") {
                     if (num > oldLevel) {
                         theSvg.classList.add(animationName + 'InDown');
+                    } else if (num === oldLevel) {
+                        theSvg.classList.add('bounceIn');
                     } else {
                         theSvg.classList.add(animationName + 'InUp')
                     }
@@ -168,8 +176,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     for (el of document.getElementsByTagName('nav')[0].children) {
         console.log(el.innerHTML);
-        el.onclick = e =>
+        if (el.innerHTML === localStorage.level)
+            el.classList.add('selected');
+        el.onclick = e => {
+            for (elem of document.getElementsByTagName('nav')[0].children)
+                elem.classList.remove('selected');
+
+            e.toElement.classList.add('selected');
             loadFloor(e.toElement.innerHTML);
+        }
     }
 })
 
