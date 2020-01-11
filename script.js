@@ -12,12 +12,11 @@ if (!localStorage.level || localStorage.level > settings.maxLevel)
     localStorage.level = 3
 
 function loadJSON(filename, callback) {
-
     var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
+    xobj.overrideMimeType('application/json');
     xobj.open('GET', filename, true);
     xobj.onreadystatechange = function () {
-        if (xobj.readyState == 4 && xobj.status == "200") {
+        if (xobj.readyState == 4 && xobj.status == '200') {
             // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
             callback(xobj.responseText);
         }
@@ -26,7 +25,7 @@ function loadJSON(filename, callback) {
 }
 
 function loadFloor(num) {
-    if (typeof document.getElementsByTagName('svg')[0] !== "undefined" && num === document.getElementsByTagName('svg')[0].id)
+    if (typeof document.getElementsByTagName('svg')[0] !== 'undefined' && num === document.getElementsByTagName('svg')[0].id)
         return // prevent multiloads
 
     if (((localStorage.level != num || (localStorage.level === num || document.getElementsByTagName('svg').length === 0 && num != document.getElementsByTagName('svg')[0].id)) || document.getElementsByClassName('svgFloor').length == 0) && num <= settings.maxLevel) {
@@ -34,7 +33,7 @@ function loadFloor(num) {
 
         addScript(`levels/${num}.svg`, function(theSvg) {
             animationName = 'level';
-            if (typeof document.getElementsByTagName('svg')[0] !== "undefined") {
+            if (typeof document.getElementsByTagName('svg')[0] !== 'undefined') {
                 timeoutAnimation = 450
                 for (el of document.getElementsByClassName('svgFloor')) {
                     oldLevel = el.id
@@ -60,7 +59,7 @@ function loadFloor(num) {
                 document.body.appendChild(theSvg)
                 theSvg.classList.add('animated');
                 theSvg.classList.add('medDur');
-                if (typeof document.getElementsByTagName('svg')[0] !== "undefined") {
+                if (typeof document.getElementsByTagName('svg')[0] !== 'undefined') {
                     if (num > oldLevel) {
                         theSvg.classList.add(animationName + 'InDown');
                     } else if (num === oldLevel) {
@@ -85,8 +84,14 @@ function loadFloor(num) {
                     }
     
                     el.addEventListener('mouseenter', e => {
+                        if (typeof e.target.getElementsByTagName('text')[0] === 'undefined')
+                            return
+
                         e.target.children.item(0).setAttribute('opacity', 0.1);
                         e.target.children.item(0).setAttribute('fill', 'white');
+
+                        if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
+                            return
     
                         if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
                             document.getElementById('display').classList.add('hover');
@@ -94,8 +99,14 @@ function loadFloor(num) {
                     })
     
                     el.addEventListener('mouseleave', e => {
+                        if (typeof e.target.getElementsByTagName('text')[0] === 'undefined')
+                            return
+
                         e.target.children.item(0).setAttribute('opacity', 0.5);
                         e.target.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
+
+                        if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
+                            return
     
                         if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
                             document.getElementById('display').classList.remove('hover');
@@ -141,9 +152,9 @@ function rectClick(e) {
 
     if (id)
         document.querySelector('#display').innerHTML += `<h1>${rdbleName}</h1>`;
-    if (str.ladder)
+    if (typeof str.ladder !== 'undefined')
         document.querySelector('#display').innerHTML += `<p>located near the <b>${str.ladder}</b> ladder</p>`;
-    if (str.name)
+    if (typeof str.name  !== 'undefined')
         document.querySelector('#display').innerHTML += `<p>previously named <b>${str.name}</b></p>`;
 }
 
