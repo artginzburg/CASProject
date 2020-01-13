@@ -3,27 +3,6 @@ settings = {
 }
 oldLevel = 0;
 
-loadJSON('structure.json', e => {
-    window.rooms = JSON.parse(e)
-    console.log(e)
-})
-
-if (!localStorage.level || localStorage.level > settings.maxLevel)
-    localStorage.level = 3
-
-function loadJSON(filename, callback) {
-    var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType('application/json');
-    xobj.open('GET', filename, true);
-    xobj.onreadystatechange = function () {
-        if (xobj.readyState == 4 && xobj.status == '200') {
-            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-            callback(xobj.responseText);
-        }
-    };
-    xobj.send(null);
-}
-
 function loadFloor(num) {
     if (typeof document.getElementsByTagName('svg')[0] !== 'undefined' && num === document.getElementsByTagName('svg')[0].id)
         return // prevent multiloads
@@ -125,17 +104,6 @@ function loadFloor(num) {
     }
 }
 
-window.onstorage = e => {
-    if (e.key === 'level')
-        loadFloor(e.newValue);
-}
-
-function htmlToElement(html) {
-    var template = document.createElement('template');
-    template.innerHTML = html.trim();
-    return template.content.firstChild;
-}
-
 function rectClick(e) {
     id = e.target.id;
 
@@ -177,6 +145,38 @@ function closeDisplay() {
         document.querySelector('#display').style.display = 'none';
     }, 800);
 }
+
+function addScript(src, onload = '') {
+    xhr = new XMLHttpRequest();
+    xhr.open('GET', src, false);
+    xhr.overrideMimeType('image/svg+xml');
+    xhr.send('');
+    if (xhr.responseXML) 
+        onload(xhr.responseXML.documentElement);
+    else {
+        text = 'Error loading ' + src
+        console.log(text);
+        alert(text);
+    }
+}
+function loadJSON(filename, callback) {
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType('application/json');
+    xobj.open('GET', filename, true);
+    xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == '200') {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+        }
+    };
+    xobj.send(null);
+}
+
+window.onstorage = e => {
+    if (e.key === 'level')
+        loadFloor(e.newValue);
+}
+
 document.onkeydown = e => {
     // console.log(e);
 
@@ -187,7 +187,10 @@ document.onkeydown = e => {
         if (e.code.includes('Digit'))
             loadFloor(e.code.split('Digit')[1])
     }
-};
+}
+
+if (!localStorage.level || localStorage.level > settings.maxLevel)
+    localStorage.level = 3
 
 document.addEventListener('DOMContentLoaded', function() {
     loadFloor(localStorage.level);
@@ -196,51 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
         el.onclick = e => loadFloor(e.toElement.innerHTML)
 })
 
-function addScript(src, onload = '') {
-    xhr = new XMLHttpRequest();
-    xhr.open('GET', src, false);
-    // Following line is just to be on the safe side;
-    // not needed if your server delivers SVG with correct MIME type
-    xhr.overrideMimeType('image/svg+xml');
-    xhr.send('');
-    if (xhr.responseXML) 
-        onload(xhr.responseXML.documentElement);
-    else {
-        text = 'Error loading ' + src
-        console.log(text);
-        alert(text);
-        // errorText = document.createElement('p');
-        // errorText.innerText = text;
-        // errorText.style.textAlign = 'center'
-        // errorText.style.margin = 'auto'
-        // document.body.appendChild(errorText)
-    }
-  
-    // document.getElementById("svgContainer")
-    //   .appendChild(xhr.responseXML.documentElement);
-
-    // var head = document.getElementsByTagName('head')[0];
-    // var script = document.createElement('script');
-    // script.type = 'text/javascript';
-    // script.onload = onload;
-    // script.src = src;
-    // script.onerror = function() {
-    //     text = 'Error loading ' + this.src
-    //     console.log(text);
-    //     alert(text);
-    //     // errorText = document.createElement('p');
-    //     // errorText.innerText = text;
-    //     // errorText.style.textAlign = 'center'
-    //     // errorText.style.margin = 'auto'
-    //     // document.body.appendChild(errorText)
-    // }
-    // if (findScript(src))
-        // document.head.removeChild(findScript(src))
-    // head.appendChild(script);
-}
-
-// function findScript(path) {
-//     for (script of document.getElementsByTagName('script'))
-//         if (script.getAttribute('src') === path)
-//             return script
-// }
+loadJSON('structure.json', e => {
+    window.rooms = JSON.parse(e)
+    console.log(e)
+})
