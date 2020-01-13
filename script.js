@@ -1,149 +1,152 @@
 settings = {
-    maxLevel: 4
-}
-oldLevel = 0;
-
-function loadFloor(num) {
-    if (typeof document.getElementsByTagName('svg')[0] !== 'undefined' && num === document.getElementsByTagName('svg')[0].id)
-        return // prevent multiloads
-
-    if (((localStorage.level != num || (localStorage.level === num || document.getElementsByTagName('svg').length === 0 && num != document.getElementsByTagName('svg')[0].id)) || document.getElementsByClassName('svgFloor').length == 0) && num <= settings.maxLevel) {
-        localStorage.level = num
-
-        addScript(`levels/${num}.svg`, function(theSvg) {
-            animationName = 'level';
-            if (typeof document.getElementsByTagName('svg')[0] !== 'undefined') {
-                timeoutAnimation = 450
-                for (el of document.getElementsByClassName('svgFloor')) {
-                    oldLevel = el.id
-                    el.classList.remove(animationName + 'InDown');
-                    el.classList.remove(animationName + 'InUp');
-                    if (num > oldLevel) {
-                        el.classList.add(animationName + 'OutDown');
-                    } else if (num === oldLevel) {
-                        el.classList.add('bounceOut');
-                        timeoutAnimation = 700
-                    } else {
-                        el.classList.add(animationName + 'OutUp');
-                    }
-                    setTimeout(() => {
-                        el.parentNode.removeChild(el)
-                    }, timeoutAnimation);
-                }
-            } else {
-                timeoutAnimation = 0
-            }
-
-            setTimeout(() => {
-                document.body.appendChild(theSvg)
-                theSvg.classList.add('animated');
-                theSvg.classList.add('medDur');
-                if (typeof document.getElementsByTagName('svg')[0] !== 'undefined') {
-                    if (num > oldLevel) {
-                        theSvg.classList.add(animationName + 'InDown');
-                    } else if (num === oldLevel) {
-                        theSvg.classList.add('bounceIn');
-                    } else {
-                        theSvg.classList.add(animationName + 'InUp')
-                    }
-                }
-    
-                document.getElementsByTagName('svg')[0].id = num
-    
-                classes = document.getElementsByTagName('svg').item(0).getElementById('classes');
-                rects = classes.getElementsByTagName('g');
-                for (el of rects) {
-                    console.log(el);
-                    el.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
-                    el.children.item(0).setAttribute('opacity', 0.5);
-    
-                    if (!el.id.includes('WC') && !el.id.includes('room')) {
-                        el.setAttribute('onclick', '');
-                        el.onclick = rectClick;
-                    }
-    
-                    el.addEventListener('mouseenter', e => {
-                        if (typeof e.target.getElementsByTagName('text')[0] === 'undefined')
-                            return
-
-                        e.target.children.item(0).setAttribute('opacity', 0.1);
-                        e.target.children.item(0).setAttribute('fill', 'white');
-
-                        if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
-                            return
-    
-                        if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
-                            document.getElementById('display').classList.add('hover');
-    
-                    })
-    
-                    el.addEventListener('mouseleave', e => {
-                        if (typeof e.target.getElementsByTagName('text')[0] === 'undefined')
-                            return
-
-                        e.target.children.item(0).setAttribute('opacity', 0.5);
-                        e.target.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
-
-                        if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
-                            return
-    
-                        if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
-                            document.getElementById('display').classList.remove('hover');
-                    })
-                }
-            }, timeoutAnimation);
-            
-        })
-
-        for (elem of document.getElementsByTagName('nav')[0].children) {
-            elem.classList.remove('selected');
-
-            if (elem.innerHTML === localStorage.level)
-                elem.classList.add('selected');
-        }
+    maxLevel: 4,
+    temp: {
+        oldLevel: 0
     }
 }
 
-function rectClick(e) {
-    id = e.target.id;
+schoolMap = {
+    display: {
+        open(e) {
+            id = e.target.id;
 
-    let results = {};
+            let results = {};
+        
+            for (key in rooms.levels[localStorage.level])
+                if (key === id)
+                    results[key] = rooms.levels[localStorage.level][key]
+        
+            console.log(results);
+            str = results[id];
+            rdbleName = e.target.parentNode.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML;
+            document.querySelector('#display').classList.add('hover');
+        
+            document.querySelector('#display').classList.remove('zoomOutDown');
+            document.querySelector('#display').classList.add('zoomInDown');
+        
+            document.querySelector('#display').style.display = 'block';
+        
+            document.querySelector('#display').innerHTML = '';
+        
+            if (id)
+                document.querySelector('#display').innerHTML += `<h1>${rdbleName}</h1>`;
+            if (typeof str.ladder !== 'undefined')
+                document.querySelector('#display').innerHTML += `<p>located near the <b>${str.ladder}</b> ladder</p>`;
+            if (typeof str.name  !== 'undefined')
+                document.querySelector('#display').innerHTML += `<p>previously named <b>${str.name}</b></p>`;
+        },
+        close() {
+            document.querySelector('#display').classList.remove('zoomInDown');
+            document.querySelector('#display').classList.add('zoomOutDown');
+        
+            setTimeout(() => {
+                document.querySelector('#display').style.display = 'none';
+            }, 800);
+        }
+    },
+    load: level => {
+        if (typeof document.getElementsByTagName('svg')[0] !== 'undefined' && level === document.getElementsByTagName('svg')[0].id)
+            return // prevent multiloads
 
-    for (key in rooms.levels[localStorage.level])
-        if (key === id)
-            results[key] = rooms.levels[localStorage.level][key]
+        if (((localStorage.level != level || (localStorage.level === level || document.getElementsByTagName('svg').length === 0 && level != document.getElementsByTagName('svg')[0].id)) || document.getElementsByClassName('svgFloor').length == 0) && level <= settings.maxLevel) {
+            localStorage.level = level
 
-    console.log(results);
-    str = results[id];
-    rdbleName = e.target.parentNode.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML;
-    document.querySelector('#display').classList.add('hover');
+            addScript(`levels/${level}.svg`, function(theSvg) {
+                animationName = 'level';
+                if (typeof document.getElementsByTagName('svg')[0] !== 'undefined') {
+                    timeoutAnimation = 450
+                    for (el of document.getElementsByClassName('svgFloor')) {
+                        settings.temp.oldLevel = el.id
+                        el.classList.remove(animationName + 'InDown');
+                        el.classList.remove(animationName + 'InUp');
+                        if (level > settings.temp.oldLevel) {
+                            el.classList.add(animationName + 'OutDown');
+                        } else if (level === settings.temp.oldLevel) {
+                            el.classList.add('bounceOut');
+                            timeoutAnimation = 700
+                        } else {
+                            el.classList.add(animationName + 'OutUp');
+                        }
+                        setTimeout(() => {
+                            el.parentNode.removeChild(el)
+                        }, timeoutAnimation);
+                    }
+                } else {
+                    timeoutAnimation = 0
+                }
 
-    document.querySelector('#display').classList.remove('zoomOutDown');
-    document.querySelector('#display').classList.add('zoomInDown');
+                setTimeout(() => {
+                    document.body.appendChild(theSvg)
+                    theSvg.classList.add('animated');
+                    theSvg.classList.add('medDur');
+                    if (typeof document.getElementsByTagName('svg')[0] !== 'undefined') {
+                        if (level > settings.temp.oldLevel) {
+                            theSvg.classList.add(animationName + 'InDown');
+                        } else if (level === settings.temp.oldLevel) {
+                            theSvg.classList.add('bounceIn');
+                        } else {
+                            theSvg.classList.add(animationName + 'InUp')
+                        }
+                    }
+        
+                    document.getElementsByTagName('svg')[0].id = level
+        
+                    classes = document.getElementsByTagName('svg').item(0).getElementById('classes');
+                    rects = classes.getElementsByTagName('g');
+                    for (el of rects) {
+                        console.log(el);
+                        el.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
+                        el.children.item(0).setAttribute('opacity', 0.5);
+        
+                        if (!el.id.includes('WC') && !el.id.includes('room')) {
+                            el.setAttribute('onclick', '');
+                            el.onclick = schoolMap.display.open;
+                        }
+        
+                        el.addEventListener('mouseenter', e => {
+                            if (typeof e.target.getElementsByTagName('text')[0] === 'undefined')
+                                return
 
-    document.querySelector('#display').style.display = 'block';
+                            e.target.children.item(0).setAttribute('opacity', 0.1);
+                            e.target.children.item(0).setAttribute('fill', 'white');
 
-    document.querySelector('#display').innerHTML = '';
+                            if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
+                                return
+        
+                            if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
+                                document.getElementById('display').classList.add('hover');
+        
+                        })
+        
+                        el.addEventListener('mouseleave', e => {
+                            if (typeof e.target.getElementsByTagName('text')[0] === 'undefined')
+                                return
 
-    if (id)
-        document.querySelector('#display').innerHTML += `<h1>${rdbleName}</h1>`;
-    if (typeof str.ladder !== 'undefined')
-        document.querySelector('#display').innerHTML += `<p>located near the <b>${str.ladder}</b> ladder</p>`;
-    if (typeof str.name  !== 'undefined')
-        document.querySelector('#display').innerHTML += `<p>previously named <b>${str.name}</b></p>`;
-}
+                            e.target.children.item(0).setAttribute('opacity', 0.5);
+                            e.target.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
 
-function rotateMap(deg = -90) {
-    document.getElementsByClassName('svgFloor')[0].style.transform = `rotate(${deg}deg)`
-}
+                            if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
+                                return
+        
+                            if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
+                                document.getElementById('display').classList.remove('hover');
+                        })
+                    }
+                }, timeoutAnimation);
+                
+            })
 
-function closeDisplay() {
-    document.querySelector('#display').classList.remove('zoomInDown');
-    document.querySelector('#display').classList.add('zoomOutDown');
+            for (elem of document.getElementsByTagName('nav')[0].children) {
+                elem.classList.remove('selected');
 
-    setTimeout(() => {
-        document.querySelector('#display').style.display = 'none';
-    }, 800);
+                if (elem.innerHTML === localStorage.level)
+                    elem.classList.add('selected');
+            }
+        }
+    },
+    rotate: (deg = -90) => {
+        document.getElementsByClassName('svgFloor')[0].style.transform = `rotate(${deg}deg)`
+    }
 }
 
 function addScript(src, onload = '') {
@@ -172,31 +175,33 @@ function loadJSON(filename, callback) {
     xobj.send(null);
 }
 
+
 window.onstorage = e => {
     if (e.key === 'level')
-        loadFloor(e.newValue);
+        schoolMap.load(e.newValue);
 }
 
 document.onkeydown = e => {
     // console.log(e);
 
     if (e.code === 'Escape')
-        closeDisplay()
+        schoolMap.display.close()
 
     if (e.altKey) {
         if (e.code.includes('Digit'))
-            loadFloor(e.code.split('Digit')[1])
+            schoolMap.load(e.code.split('Digit')[1])
     }
 }
+
 
 if (!localStorage.level || localStorage.level > settings.maxLevel)
     localStorage.level = 3
 
 document.addEventListener('DOMContentLoaded', function() {
-    loadFloor(localStorage.level);
+    schoolMap.load(localStorage.level);
     
     for (el of document.getElementsByTagName('nav')[0].children)
-        el.onclick = e => loadFloor(e.toElement.innerHTML)
+        el.onclick = e => schoolMap.load(e.toElement.innerHTML)
 })
 
 loadJSON('structure.json', e => {
