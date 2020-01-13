@@ -152,7 +152,7 @@ schoolMap = {
 function addScript(src, onload = '') {
     xhr = new XMLHttpRequest();
     xhr.open('GET', src, false);
-    xhr.overrideMimeType('image/svg+xml');
+    xhr.overrideMimeType('image/svg+xml'); // not needed if your server delivers SVG with correct MIME type (just to be on the safe side)
     xhr.send('');
     if (xhr.responseXML) 
         onload(xhr.responseXML.documentElement);
@@ -166,7 +166,7 @@ function loadJSON(filename, callback) {
     var xobj = new XMLHttpRequest();
     xobj.overrideMimeType('application/json');
     xobj.open('GET', filename, true);
-    xobj.onreadystatechange = function () {
+    xobj.onreadystatechange = function() {
         if (xobj.readyState == 4 && xobj.status == '200') {
             // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
             callback(xobj.responseText);
