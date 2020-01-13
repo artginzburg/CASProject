@@ -115,6 +115,13 @@ function loadFloor(num) {
             }, timeoutAnimation);
             
         })
+
+        for (elem of document.getElementsByTagName('nav')[0].children) {
+            elem.classList.remove('selected');
+
+            if (elem.innerHTML === localStorage.level)
+                elem.classList.add('selected');
+        }
     }
 }
 
@@ -185,18 +192,8 @@ document.onkeydown = e => {
 document.addEventListener('DOMContentLoaded', function() {
     loadFloor(localStorage.level);
     
-    for (el of document.getElementsByTagName('nav')[0].children) {
-        console.log(el.innerHTML);
-        if (el.innerHTML === localStorage.level)
-            el.classList.add('selected');
-        el.onclick = e => {
-            for (elem of document.getElementsByTagName('nav')[0].children)
-                elem.classList.remove('selected');
-
-            e.toElement.classList.add('selected');
-            loadFloor(e.toElement.innerHTML);
-        }
-    }
+    for (el of document.getElementsByTagName('nav')[0].children)
+        el.onclick = e => loadFloor(e.toElement.innerHTML)
 })
 
 function addScript(src, onload = '') {
