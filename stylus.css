@@ -83,7 +83,7 @@ body {
     top: 180px;
 }
 .svgFloor:nth-of-type(4) {
-    transform: perspective(100em) rotateX(70deg) rotateZ(-30deg) translateZ(-210px);
+    transform: perspective(100em) rotateX(70deg) rotateZ(-30deg) translateZ(-165px);
 }
 .svgFloor:nth-of-type(4):hover {
     top: 100px;

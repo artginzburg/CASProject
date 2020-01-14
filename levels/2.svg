@@ -1,9 +1,8 @@
 
-<svg width="438px" class="svgFloor" height="687px" viewBox="0 0 438 687" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg class="svgFloor" width="438px" height="687px" viewBox="0 0 438 687" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="2-floor" transform="translate(-421.000000, -37.000000)">
             <g id="2" transform="translate(421.500000, 38.000000)">
-                <path d="M280.5,684 L156.5,684 L156.5,497.370221 L125.5,497.370221 L125.5,555.136821 L64.5,555.136821 L64.5,589 L1.5,589 L1.5,402.752515 L33.5,402.752515 L33.5,278.255533 L1.5,278.255533 L1.5,94 L64.5,94 L64.5,125.871227 L125.5,125.871227 L125.5,186.625755 L156.5,186.625755 L156.5,1 L280.5,1 L280.5,185.625755 L311.5,185.625755 L311.5,124.871227 L372.5,124.871 L372.5,93 L435.5,93 L435.5,277.255533 L403.5,277.255533 L403.5,401.752515 L435.5,401.752515 L435.5,588 L372.5,588 L372.5,554.136 L311.5,554.136821 L311.5,496.370221 L280.5,496.370221 L280.5,684 Z" id="Combined-Shape-Copy" fill="#1E1E1E"></path>
                 <path d="M281.5,685 L155.5,685 L155.5,498 L124.5,498 L124.5,556 L63.5,556 L63.5,590 L0.5,590 L0.5,403 L32.5,403 L32.5,278 L0.5,278 L0.5,93 L63.5,93 L63.5,125 L124.5,125 L124.5,186 L155.5,186 L155.5,0 L281.5,0 L281.5,185 L312.5,185 L312.5,124 L373.5,124 L373.5,92 L436.5,92 L436.5,277 L404.5,277 L404.5,402 L436.5,402 L436.5,589 L373.5,589 L373.5,555 L312.5,555 L312.5,497 L281.5,497 L281.5,685 Z" id="Combined-Shape" stroke="#1E8252" stroke-width="2"></path>
                 <g id="ledders" transform="translate(125.500000, 123.000000)">
                     <g id="blue-ledder" transform="translate(0.000000, 1.000000)">

@@ -103,34 +103,34 @@ schoolMap = {
                             el.onclick = schoolMap.display.open;
                         }
         
-                        // el.addEventListener('mouseenter', e => {
-                        //     if (typeof e.target.getElementsByTagName('text')[0] === 'undefined')
-                        //         return
+                        el.addEventListener('mouseenter', e => {
+                            if (typeof e.target.getElementsByTagName('text')[0] === 'undefined')
+                                return
 
-                        //     e.target.children.item(0).setAttribute('opacity', 0.1);
-                        //     e.target.children.item(0).setAttribute('fill', 'white');
+                            e.target.children.item(0).setAttribute('opacity', 0.1);
+                            e.target.children.item(0).setAttribute('fill', 'white');
 
-                        //     if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
-                        //         return
+                            if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
+                                return
         
-                        //     if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
-                        //         document.getElementById('display').classList.add('hover');
+                            if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
+                                document.getElementById('display').classList.add('hover');
         
-                        // })
+                        })
         
-                        // el.addEventListener('mouseleave', e => {
-                        //     if (typeof e.target.getElementsByTagName('text')[0] === 'undefined')
-                        //         return
+                        el.addEventListener('mouseleave', e => {
+                            if (typeof e.target.getElementsByTagName('text')[0] === 'undefined')
+                                return
 
-                        //     e.target.children.item(0).setAttribute('opacity', 0.5);
-                        //     e.target.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
+                            e.target.children.item(0).setAttribute('opacity', 0.5);
+                            e.target.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
 
-                        //     if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
-                        //         return
+                            if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
+                                return
         
-                        //     if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
-                        //         document.getElementById('display').classList.remove('hover');
-                        // })
+                            if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
+                                document.getElementById('display').classList.remove('hover');
+                        })
                     }
                 }, timeoutAnimation);
                 
@@ -175,6 +175,35 @@ schoolMap = {
                         el.setAttribute('onclick', '');
                         el.onclick = schoolMap.display.open;
                     }
+
+                    el.addEventListener('mouseenter', e => {
+                        if (typeof e.target.getElementsByTagName('text')[0] === 'undefined')
+                            return
+    
+                        e.target.children.item(0).setAttribute('opacity', 0.1);
+                        e.target.children.item(0).setAttribute('fill', 'white');
+    
+                        if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
+                            return
+    
+                        if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
+                            document.getElementById('display').classList.add('hover');
+    
+                    })
+    
+                    el.addEventListener('mouseleave', e => {
+                        if (typeof e.target.getElementsByTagName('text')[0] === 'undefined')
+                            return
+    
+                        e.target.children.item(0).setAttribute('opacity', 0.5);
+                        e.target.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
+    
+                        if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
+                            return
+    
+                        if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
+                            document.getElementById('display').classList.remove('hover');
+                    })
                 }
             })
         }

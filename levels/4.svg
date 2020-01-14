@@ -1,6 +1,7 @@
-<svg width="438px" height="687px" class="svgFloor" viewBox="0 0 438 687" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<svg class="svgFloor" width="438px" height="687px" viewBox="0 0 438 687" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Artboard-Copy-4" transform="translate(-457.000000, -37.000000)">
+        <g id="4-floor" transform="translate(-457.000000, -37.000000)">
             <g id="4" transform="translate(457.500000, 38.000000)">
                 <path d="M281.5,685 L155.5,685 L155.5,498 L124.5,498 L124.5,556 L63.5,556 L63.5,590 L0.5,590 L0.5,403 L32.5,403 L32.5,278 L0.5,278 L0.5,93 L63.5,93 L63.5,124 L124.5,124 L124.5,186 L155.5,186 L155.5,0 L281.5,0 L281.5,185 L312.5,185 L312.5,124 L373.5,124 L373.5,92 L436.5,92 L436.5,277 L404.5,277 L404.5,402 L436.5,402 L436.5,589 L373.5,589 L373.5,556 L312.5,556 L312.5,497 L281.5,497 L281.5,685 Z" id="Combined-Shape" stroke="#1E8252" stroke-width="2"></path>
                 <g id="lines" transform="translate(0.000000, 123.500000)" stroke="#1E8252" stroke-linecap="square" stroke-width="2">
@@ -139,8 +140,8 @@
                     <g id="room428" transform="translate(344.000000, 154.000000)" fill="#FFFFFF" opacity="0.1">
                         <rect id="428" x="0" y="0" width="27" height="29"></rect>
                     </g>
-                    <g id="427" transform="translate(312.000000, 0.000000)">
-                        <path d="M59,91 L0,91 L0,32 L59,32 L59,48 L61,48 L61,0 L122,0 L122,91 L61,91 L61,82 L59,82 L59,91 Z" id="library" fill="#FFFFFF" opacity="0.1"></path>
+                    <g id="room427" transform="translate(312.000000, 0.000000)">
+                        <path d="M59,91 L0,91 L0,32 L59,32 L59,48 L61,48 L61,0 L122,0 L122,91 L61,91 L61,82 L59,82 L59,91 Z" id="427" fill="#FFFFFF" opacity="0.1"></path>
                         <text id="Library" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
                             <tspan x="42.597" y="68">Library</tspan>
                         </text>
