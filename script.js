@@ -1,9 +1,9 @@
-settings = {
-    maxLevel: 4,
-    temp: {
-        oldLevel: 0
-    }
-}
+// settings = {
+//     maxLevel: 4,
+//     temp: {
+//         oldLevel: 0
+//     }
+// }
 
 schoolMap = {
     display: {
@@ -11,7 +11,7 @@ schoolMap = {
             id = e.target.id;
 
             let results = {};
-        
+
             for (key in rooms.levels[localStorage.level])
                 if (key === id)
                     results[key] = rooms.levels[localStorage.level][key]
@@ -52,21 +52,21 @@ schoolMap = {
             localStorage.level = level
 
             addScript(`levels/${level}.svg`, function(theSvg) {
-                animationName = 'level';
+                // animationName = 'level';
                 if (typeof document.getElementsByTagName('svg')[0] !== 'undefined') {
                     timeoutAnimation = 450
                     for (el of document.getElementsByClassName('svgFloor')) {
                         settings.temp.oldLevel = el.id
-                        el.classList.remove(animationName + 'InDown');
-                        el.classList.remove(animationName + 'InUp');
-                        if (level > settings.temp.oldLevel) {
-                            el.classList.add(animationName + 'OutDown');
-                        } else if (level === settings.temp.oldLevel) {
-                            el.classList.add('bounceOut');
-                            timeoutAnimation = 700
-                        } else {
-                            el.classList.add(animationName + 'OutUp');
-                        }
+                        // el.classList.remove(animationName + 'InDown');
+                        // el.classList.remove(animationName + 'InUp');
+                        // if (level > settings.temp.oldLevel) {
+                        //     el.classList.add(animationName + 'OutDown');
+                        // } else if (level === settings.temp.oldLevel) {
+                        //     el.classList.add('bounceOut');
+                        //     timeoutAnimation = 700
+                        // } else {
+                        //     el.classList.add(animationName + 'OutUp');
+                        // }
                         setTimeout(() => {
                             el.parentNode.removeChild(el)
                         }, timeoutAnimation);
@@ -77,17 +77,17 @@ schoolMap = {
 
                 setTimeout(() => {
                     document.body.appendChild(theSvg)
-                    theSvg.classList.add('animated');
-                    theSvg.classList.add('medDur');
-                    if (typeof document.getElementsByTagName('svg')[0] !== 'undefined') {
-                        if (level > settings.temp.oldLevel) {
-                            theSvg.classList.add(animationName + 'InDown');
-                        } else if (level === settings.temp.oldLevel) {
-                            theSvg.classList.add('bounceIn');
-                        } else {
-                            theSvg.classList.add(animationName + 'InUp')
-                        }
-                    }
+                    // theSvg.classList.add('animated');
+                    // theSvg.classList.add('medDur');
+                    // if (typeof document.getElementsByTagName('svg')[0] !== 'undefined') {
+                    //     if (level > settings.temp.oldLevel) {
+                    //         theSvg.classList.add(animationName + 'InDown');
+                    //     } else if (level === settings.temp.oldLevel) {
+                    //         theSvg.classList.add('bounceIn');
+                    //     } else {
+                    //         theSvg.classList.add(animationName + 'InUp')
+                    //     }
+                    // }
         
                     document.getElementsByTagName('svg')[0].id = level
         
@@ -103,34 +103,34 @@ schoolMap = {
                             el.onclick = schoolMap.display.open;
                         }
         
-                        el.addEventListener('mouseenter', e => {
-                            if (typeof e.target.getElementsByTagName('text')[0] === 'undefined')
-                                return
+                        // el.addEventListener('mouseenter', e => {
+                        //     if (typeof e.target.getElementsByTagName('text')[0] === 'undefined')
+                        //         return
 
-                            e.target.children.item(0).setAttribute('opacity', 0.1);
-                            e.target.children.item(0).setAttribute('fill', 'white');
+                        //     e.target.children.item(0).setAttribute('opacity', 0.1);
+                        //     e.target.children.item(0).setAttribute('fill', 'white');
 
-                            if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
-                                return
+                        //     if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
+                        //         return
         
-                            if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
-                                document.getElementById('display').classList.add('hover');
+                        //     if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
+                        //         document.getElementById('display').classList.add('hover');
         
-                        })
+                        // })
         
-                        el.addEventListener('mouseleave', e => {
-                            if (typeof e.target.getElementsByTagName('text')[0] === 'undefined')
-                                return
+                        // el.addEventListener('mouseleave', e => {
+                        //     if (typeof e.target.getElementsByTagName('text')[0] === 'undefined')
+                        //         return
 
-                            e.target.children.item(0).setAttribute('opacity', 0.5);
-                            e.target.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
+                        //     e.target.children.item(0).setAttribute('opacity', 0.5);
+                        //     e.target.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
 
-                            if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
-                                return
+                        //     if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
+                        //         return
         
-                            if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
-                                document.getElementById('display').classList.remove('hover');
-                        })
+                        //     if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
+                        //         document.getElementById('display').classList.remove('hover');
+                        // })
                     }
                 }, timeoutAnimation);
                 
@@ -142,6 +142,28 @@ schoolMap = {
                 if (elem.innerHTML === localStorage.level)
                     elem.classList.add('selected');
             }
+        }
+    },
+    loadAll: function() {
+        for (let level = 4; level >= 1; level--) {
+            addScript(`levels/${level}.svg`, theSvg => {
+                document.body.appendChild(theSvg)
+
+                document.getElementsByTagName('svg')[4 - level].id = level
+    
+                classes = document.getElementsByTagName('svg').item(4 - level).getElementById('classes');
+                rects = classes.getElementsByTagName('g');
+                for (el of rects) {
+                    console.log(el);
+                    el.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
+                    el.children.item(0).setAttribute('opacity', 0.5);
+    
+                    if (!el.id.includes('WC') && !el.id.includes('room')) {
+                        el.setAttribute('onclick', '');
+                        el.onclick = schoolMap.display.open;
+                    }
+                }
+            })
         }
     },
     rotate: (deg = -90) => {
@@ -176,10 +198,10 @@ function loadJSON(filename, callback) {
 }
 
 
-window.onstorage = e => {
-    if (e.key === 'level')
-        schoolMap.load(e.newValue);
-}
+// window.onstorage = e => {
+//     if (e.key === 'level')
+//         schoolMap.load(e.newValue);
+// }
 
 document.onkeydown = e => {
     // console.log(e);
@@ -187,21 +209,21 @@ document.onkeydown = e => {
     if (e.code === 'Escape')
         schoolMap.display.close()
 
-    if (e.altKey) {
-        if (e.code.includes('Digit'))
-            schoolMap.load(e.code.split('Digit')[1])
-    }
+    // if (e.altKey) {
+    //     if (e.code.includes('Digit'))
+    //         schoolMap.load(e.code.split('Digit')[1])
+    // }
 }
 
 
-if (!localStorage.level || localStorage.level > settings.maxLevel)
-    localStorage.level = 3
+// if (!localStorage.level || localStorage.level > settings.maxLevel)
+//     localStorage.level = 3
 
 document.addEventListener('DOMContentLoaded', function() {
-    schoolMap.load(localStorage.level);
+    schoolMap.loadAll();
     
-    for (el of document.getElementsByTagName('nav')[0].children)
-        el.onclick = e => schoolMap.load(e.toElement.innerHTML)
+    // for (el of document.getElementsByTagName('nav')[0].children)
+    //     el.onclick = e => schoolMap.load(e.toElement.innerHTML)
 })
 
 loadJSON('structure.json', e => {

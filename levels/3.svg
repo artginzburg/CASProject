@@ -1,4 +1,5 @@
-<svg id="svgFloor3" class="svgFloor" width="438px" height="687px" viewBox="0 0 438 687" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<svg class="svgFloor" width="438px" height="687px" viewBox="0 0 438 687" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="3-floor" transform="translate(-421.000000, -35.000000)">
             <g id="3" transform="translate(421.500000, 36.000000)">
@@ -235,15 +236,15 @@
                         </text>
                     </g>
                     <g id="M303" transform="translate(32.000000, 186.000000)">
-                        <rect id="3032" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="38" height="61"></rect>
+                        <rect id="303" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="38" height="61"></rect>
                         <text id="M.303" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
                             <tspan x="3.327" y="34">M.303</tspan>
                         </text>
                     </g>
                     <g id="M303" transform="translate(32.000000, 249.000000)">
                         <rect id="3031" fill="#FFFFFF" opacity="0.1" x="0" y="0" width="59" height="60"></rect>
-                        <text id="M.303" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
-                            <tspan x="14.327" y="33">M.303</tspan>
+                        <text id="M.303.1" font-family="AdventPro-Regular, Advent Pro" font-size="14" font-weight="normal" fill="#D0D0D0">
+                            <tspan x="12.024" y="33">M.303.1</tspan>
                         </text>
                     </g>
                     <g id="M302" transform="translate(0.000000, 311.000000)">
