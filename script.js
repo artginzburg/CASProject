@@ -150,6 +150,19 @@ schoolMap = {
                 document.body.appendChild(theSvg)
 
                 document.getElementsByTagName('svg')[4 - level].id = level
+
+                theSvg.onclick = function(e) {
+                    console.log(e.target);
+                    e.target.style.transform = 'none';
+                    e.target.style.top = '290px';
+
+                    theEl = e.target.nextElementSibling;
+
+                    while (theEl) {
+                        theEl.style.top = '580px';
+                        theEl = theEl.nextElementSibling;
+                    }
+                }
     
                 classes = document.getElementsByTagName('svg').item(4 - level).getElementById('classes');
                 rects = classes.getElementsByTagName('g');
@@ -206,8 +219,13 @@ function loadJSON(filename, callback) {
 document.onkeydown = e => {
     // console.log(e);
 
-    if (e.code === 'Escape')
-        schoolMap.display.close()
+    if (e.code === 'Escape') {
+        // schoolMap.display.close()
+        for (el of document.getElementsByClassName('svgFloor')) {
+            el.style.transform = '';
+            el.style.top = '';
+        }
+    }
 
     // if (e.altKey) {
     //     if (e.code.includes('Digit'))
