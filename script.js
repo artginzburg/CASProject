@@ -6,6 +6,53 @@
 // }
 
 schoolMap = {
+    floor: {
+        select(e) {
+            console.log(e);
+            schoolMap.floor.deSelect();
+
+            if (e.target.farthestViewportElement)
+                theFloor = e.target.farthestViewportElement
+            else
+                theFloor = e.target
+
+            switch (theFloor.id) {
+                case '4':
+                    marginBefore = '0'
+                    marginAfter = '400px'
+                    break;
+                case '3':
+                    marginBefore = '290px'
+                    marginAfter = '580px'
+                    break;
+                case '2':
+                    marginBefore = '400px'
+                    marginAfter = '560px'
+                    break;
+                case '1':
+                    marginBefore = '490px'
+                    marginAfter = '0'
+                    break;
+            }
+
+            theFloor.style.transform = 'none';
+            theFloor.style.top = marginBefore;
+
+            theEl = theFloor.nextElementSibling;
+
+            while (theEl) {
+                theEl.style.top = marginAfter;
+                theEl = theEl.nextElementSibling;
+            }
+
+        },
+        deSelect() {
+            for (el of document.getElementsByClassName('svgFloor')) {
+                el.style.transform = '';
+                el.style.top = '';
+            }
+        }
+    },
     display: {
         open(e) {
             id = e.target.id;
@@ -151,18 +198,7 @@ schoolMap = {
 
                 document.getElementsByTagName('svg')[4 - level].id = level
 
-                theSvg.onclick = function(e) {
-                    console.log(e.target);
-                    e.target.style.transform = 'none';
-                    e.target.style.top = '290px';
-
-                    theEl = e.target.nextElementSibling;
-
-                    while (theEl) {
-                        theEl.style.top = '580px';
-                        theEl = theEl.nextElementSibling;
-                    }
-                }
+                theSvg.onclick = schoolMap.floor.select
     
                 classes = document.getElementsByTagName('svg').item(4 - level).getElementById('classes');
                 rects = classes.getElementsByTagName('g');
@@ -250,10 +286,7 @@ document.onkeydown = e => {
 
     if (e.code === 'Escape') {
         // schoolMap.display.close()
-        for (el of document.getElementsByClassName('svgFloor')) {
-            el.style.transform = '';
-            el.style.top = '';
-        }
+        schoolMap.floor.deSelect()
     }
 
     // if (e.altKey) {

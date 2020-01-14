@@ -54,6 +54,9 @@ body {
     background-color: rgba(0, 0, 0, .25);
     border-radius: 1em;
 }
+.svgFloor:hover ~ * {
+    opacity: .8;
+}
 .svgFloor:nth-of-type(1) {
     transform: perspective(100em) rotateX(70deg) rotateZ(-30deg) translateZ(165px);
 }
@@ -77,7 +80,6 @@ body {
 }
 .svgFloor:nth-of-type(3):hover {
     top: 80px;
-    background-color: rgba(255, 255, 255, .25);
 }
 .svgFloor:nth-of-type(3):hover ~ * {
     top: 180px;
