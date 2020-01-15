@@ -45,11 +45,14 @@ schoolMap = {
                 theEl = theEl.nextElementSibling;
             }
 
+            theFloor.classList.add('selected')
+
         },
         deSelect() {
             for (el of document.getElementsByClassName('svgFloor')) {
                 el.style.transform = '';
                 el.style.top = '';
+                el.classList.remove('selected')
             }
         }
     },
@@ -243,7 +246,7 @@ schoolMap = {
     
                     if (!el.id.includes('WC') && !el.id.includes('room')) {
                         el.setAttribute('onclick', '');
-                        el.onclick = schoolMap.display.open;
+                        // el.onclick = schoolMap.display.open;
                     }
 
                     el.addEventListener('mouseenter', e => {
