@@ -10,6 +10,7 @@
 body {
     color: #bbb;
     background-color: #1e1e1e;
+    background: #1e1e1e;
     max-width: 100vw;
     max-height: 100vh;
     display: flex;
@@ -110,6 +111,14 @@ body {
 .svgFloor g[onclick] {
     cursor: pointer;
     transition-duration: .09s;
+}
+
+.svgFloor.initial, .svgFloor.initial ~ * {
+    transform: none;
+    top: 3.5em;
+}
+.svgFloor.initial ~ * {
+    opacity: 0 !important;
 }
 
 #display {

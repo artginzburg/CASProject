@@ -198,6 +198,26 @@ schoolMap = {
         for (let level = 4; level >= 1; level--) {
             addScript(`levels/${level}.svg`, theSvg => {
                 document.body.appendChild(theSvg)
+                theSvg.style.opacity = '0'
+                theSvg.style.transform = 'scale(0.1)'
+                theSvg.style.transitionDuration = '1s'
+                theSvg.classList.add('initial')
+                setTimeout(() => {
+                    theSvg.style.opacity = '1'
+                    theSvg.style.transform = 'scale(1)'
+                    theSvg.style.transitionDuration = '1s'
+                }, 200);
+                setTimeout(() => {
+                    theSvg.style.opacity = '1'
+                    theSvg.style.transform = 'perspective(100em) rotateX(70deg) rotateZ(-30deg)';
+                    // theSvg.style.transitionDuration = '1.3s'
+                }, 800);
+                setTimeout(() => {
+                    theSvg.classList.remove('initial')
+                    theSvg.style.transform = ''
+                    theSvg.style.transitionDuration = '1s'
+                }, 1350);
+                theSvg.style.transitionDuration = ''
 
                 document.getElementsByTagName('svg')[4 - level].id = level
 
