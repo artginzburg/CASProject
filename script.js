@@ -19,14 +19,14 @@ schoolMap = {
             switch (theFloor.id) {
                 case '4':
                     marginBefore = '0'
-                    marginAfter = '400px'
+                    marginAfter = '415px'
                     break;
                 case '3':
-                    marginBefore = '290px'
+                    marginBefore = '270px'
                     marginAfter = '580px'
                     break;
                 case '2':
-                    marginBefore = '400px'
+                    marginBefore = '410px'
                     marginAfter = '560px'
                     break;
                 case '1':
