@@ -37,16 +37,9 @@ body {
 }
 
 .svgFloor {
-    /* margin: 0 auto; */
-    /* padding: .5em; */
-    /* margin: 0 auto; */
-    /* margin-top: -100px; */
-    /* margin-bottom: -720px; */
     position: absolute;
     display: block;
-    /* transform: perspective(50em) rotateX(65deg) rotateZ(-30deg); */
     filter: drop-shadow(-20px 20px 10px rgba(0, 0, 0, 1));
-    /* position: absolute; */
     transition-duration: .7s;
     top: 0;
 }
@@ -96,6 +89,11 @@ body {
 
 .svgFloor text {
     font-family: 'AdventPro', sans-serif;
+    opacity: 0;
+    transition-duration: .3s;
+}
+.svgFloor:hover text {
+    opacity: 1;
 }
 .svgFloor g text {
     pointer-events: none;
@@ -144,20 +142,39 @@ nav button.selected {
 }
 
 #display {
-    display: none;
-    height: 60%;
-    width: 25%;
-    padding: 2em;
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    right: 0;
+
+    padding: 1em;
     margin: 0 auto;
+
     text-align: center;
+
     background-color: rgba(25, 25, 25, .5);
-    border-radius: .8em;
     box-shadow: 0 0 1em black;
+    opacity: 0;
+    border-radius: .8em;
+
     transition-duration: .15s;
+
+    white-space: nowrap;
+    overflow: hidden;
+}
+#display.opened {
+    opacity: 1;
 }
 
-@media (hover:hover) {
+#display > * {
+    width: 50%;
+}
+
+/* @media (hover:hover) {
     #display:hover, #display.hover {
         box-shadow: 0 0 2em white;
     }
-}
+} */

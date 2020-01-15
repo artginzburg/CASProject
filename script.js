@@ -199,6 +199,40 @@ schoolMap = {
                 document.getElementsByTagName('svg')[4 - level].id = level
 
                 theSvg.onclick = schoolMap.floor.select
+
+                theSvg.onmouseenter = function() {
+                    // console.log(Object.keys(rooms.levels[level]))
+                    // for (el in rooms.levels[level]) {
+                    //     console.log(rooms.levels[level][el].name);
+                        
+                    // }
+                    display = document.getElementById('display');
+
+                    for (el of display.children) {
+                        el.innerHTML = ''
+                    };
+
+                    display.className = 'opened'
+
+                    for (key in rooms.levels[level]) {
+                        console.log(key);
+                        theP = document.createElement('p');
+                        theP.innerHTML = key;
+                        display.children.item(0).appendChild(theP);
+
+                        name = rooms.levels[level][key].name
+                        console.log(name == 'undefined');
+                        
+                        theName = document.createElement('p')
+                        theName.innerHTML = name == 'undefined' ? '<br>' : name;
+
+                        display.children.item(1).appendChild(theName)
+                    }
+                }
+
+                theSvg.onmouseleave = function() {
+                    document.getElementById('display').className = ''
+                }
     
                 classes = document.getElementsByTagName('svg').item(4 - level).getElementById('classes');
                 rects = classes.getElementsByTagName('g');
@@ -219,11 +253,11 @@ schoolMap = {
                         e.target.children.item(0).setAttribute('opacity', 0.1);
                         e.target.children.item(0).setAttribute('fill', 'white');
     
-                        if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
-                            return
+                        // if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
+                        //     return
     
-                        if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
-                            document.getElementById('display').classList.add('hover');
+                        // if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
+                        //     document.getElementById('display').classList.add('hover');
     
                     })
     
@@ -234,11 +268,11 @@ schoolMap = {
                         e.target.children.item(0).setAttribute('opacity', 0.5);
                         e.target.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
     
-                        if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
-                            return
+                        // if (typeof document.getElementById('display').getElementsByTagName('h1')[0] === 'undefined')
+                        //     return
     
-                        if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
-                            document.getElementById('display').classList.remove('hover');
+                        // if (document.getElementById('display').getElementsByTagName('h1')[0].innerHTML === e.target.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML)
+                        //     document.getElementById('display').classList.remove('hover');
                     })
                 }
             })
