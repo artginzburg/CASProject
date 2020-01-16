@@ -16,7 +16,7 @@ schoolMap = {
             else
                 theFloor = e.target.farthestViewportElement ? e.target.farthestViewportElement : e.target
 
-            switch (theFloor.id || exact) {
+            switch (theFloor.id) {
                 case '4':
                     marginBefore = '0'
                     marginAfter = '415px'
@@ -339,15 +339,25 @@ function loadJSON(filename, callback) {
 document.onkeydown = e => {
     // console.log(e);
 
-    if (e.code === 'Escape') {
-        // schoolMap.display.close()
+    if (e.code === 'Escape')
         schoolMap.floor.deSelect()
-    }
 
-    // if (e.altKey) {
-        if (e.code.includes('Digit'))
-            schoolMap.floor.select('', e.code.split('Digit')[1])
-    // }
+    if (e.code.includes('Digit'))
+        schoolMap.floor.select('', e.code.split('Digit')[1])
+
+    if (e.code.includes('Arrow')) {
+        currentId = document.getElementsByClassName('selected')[0].id
+        console.log(Number(currentId) + 1);
+        
+        way = e.code.split('Arrow')[1]
+        console.log(way);
+        
+        if (way == 'Down') {
+            schoolMap.floor.select('', currentId - 1)
+        } else if (way == 'Up') {
+            schoolMap.floor.select('', Number(currentId) + 1)
+        }
+    }
 }
 
 
