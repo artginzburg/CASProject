@@ -25,6 +25,7 @@ body {
     display: flex;
     align-items: center;
     height: 100%;
+    width: 100%;
     flex-direction: column;
 }
 * {
@@ -41,10 +42,14 @@ body {
     position: absolute;
     display: block;
     background-image: url('levels/back234.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
 
     filter: drop-shadow(-20px 20px 10px rgba(0, 0, 0, 1));
     transition-duration: .7s;
     top: 0;
+    max-width: 60%;
 }
 .svgFloor:hover {
     border-radius: 1em;
