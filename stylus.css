@@ -49,8 +49,8 @@ body {
 .svgFloor:hover {
     border-radius: 1em;
 }
-.svgFloor:hover ~ * {
-    opacity: .8;
+.svgFloor:hover ~ *, .svgFloor.selected ~ * {
+    opacity: .7;
 }
 .svgFloor:nth-of-type(1) {
     transform: perspective(100em) rotateX(70deg) rotateZ(-30deg) translateZ(195px);
@@ -93,8 +93,9 @@ body {
 .svgFloor:nth-of-type(4):hover ~ * {
     top: 0px;
 }
-.svgFloor.selected{
+.svgFloor.selected {
     background: none;
+    opacity: 1;
 }
 
 .svgFloor text {

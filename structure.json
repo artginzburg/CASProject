@@ -3,7 +3,7 @@
         "4": {
             "401": {
                 "ladder": "green",
-                "name": "Допустим, Пупа",
+                "name": "",
                 "projector": true,
                 "appletv": false,
                 "board": true,
@@ -11,31 +11,35 @@
                 "additionaly": "3 компьютера, печь Емели"
             },
             "402": {
-                "ladder": "green"
-            },
-            "403": {
                 "ladder": "green",
                 "name": "Chemistry"
             },
+            "403": {
+                "ladder": "green",
+                "name": "Chemistry l"
+            },
             "404": {
                 "ladder": "green",
-                "name": "А это пусть пока будет Лупа"
+                "name": "Biology"
             },
             "405": {
-                "ladder": "green"
+                "ladder": "green",
+                "name": "Study room"
             },
             "406": {
-                "ladder": "blue"
+                "ladder": "blue",
+                "name": "Study room"
             },
             "407": {
-                "ladder": "blue"
+                "ladder": "blue",
+                "name": "Dance hall"
             },
             "408": {
                 "ladder": "blue"
             },
             "409": {
                 "ladder": "blue",
-                "name": "Нафиг здесь имя вообще"
+                "name": ""
             },
             "410": {
                 "ladder": "blue",
@@ -73,14 +77,17 @@
                 "teachercomp": true
             },
             "416": {
-                "ladder": "red"
+                "ladder": "red",
+                "name": "Arts"
             },
             "417": {
                 "ladder": "red",
+                "name": "Arts 2",
                 "projector": true
             },
             "418": {
-                "ladder": "red"
+                "ladder": "red",
+                "name": "English 4"
             }
         },
         "3": {

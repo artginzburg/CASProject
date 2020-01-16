@@ -7,16 +7,16 @@
 
 schoolMap = {
     floor: {
-        select(e) {
+        select(e = '', exact) {
             console.log(e);
             schoolMap.floor.deSelect();
 
-            if (e.target.farthestViewportElement)
-                theFloor = e.target.farthestViewportElement
+            if (e == '' || exact)
+                theFloor = document.getElementById(exact)
             else
-                theFloor = e.target
+                theFloor = e.target.farthestViewportElement ? e.target.farthestViewportElement : e.target
 
-            switch (theFloor.id) {
+            switch (theFloor.id || exact) {
                 case '4':
                     marginBefore = '0'
                     marginAfter = '415px'
@@ -199,7 +199,7 @@ schoolMap = {
             addScript(`levels/${level}.svg`, theSvg => {
                 document.body.appendChild(theSvg)
                 theSvg.style.opacity = '0'
-                theSvg.style.transform = 'scale(0.1)'
+                theSvg.style.transform = 'scale(.1)'
                 theSvg.style.transitionDuration = '1s'
                 theSvg.classList.add('initial')
                 setTimeout(() => {
@@ -208,16 +208,14 @@ schoolMap = {
                     theSvg.style.transitionDuration = '1s'
                 }, 200);
                 setTimeout(() => {
-                    theSvg.style.opacity = '1'
                     theSvg.style.transform = 'perspective(100em) rotateX(70deg) rotateZ(-30deg)';
-                    // theSvg.style.transitionDuration = '1.3s'
                 }, 800);
                 setTimeout(() => {
                     theSvg.classList.remove('initial')
                     theSvg.style.transform = ''
-                    theSvg.style.transitionDuration = '1s'
+                    theSvg.style.transitionDuration = ''
+                    theSvg.style.opacity = ''
                 }, 1350);
-                theSvg.style.transitionDuration = ''
 
                 document.getElementsByTagName('svg')[4 - level].id = level
 
@@ -347,8 +345,8 @@ document.onkeydown = e => {
     }
 
     // if (e.altKey) {
-    //     if (e.code.includes('Digit'))
-    //         schoolMap.load(e.code.split('Digit')[1])
+        if (e.code.includes('Digit'))
+            schoolMap.floor.select('', e.code.split('Digit')[1])
     // }
 }
 
