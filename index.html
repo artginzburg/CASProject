@@ -4,11 +4,62 @@
     <link rel="stylesheet" href="stylus.css">
     <script src="script.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"></script>
+
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"> -->
     <!-- <link rel="preload stylesheet" as="style" type="text/css" media="screen" href="anim.css"> -->
 </head>
 
 <body>
+
+    <script>
+        /* set up XMLHttpRequest */
+        // var url = "https://myclassbook.org/wp-content/uploads/2017/12/Test.xlsx";
+        var url = "schedule.xlsx";
+        var oReq = new XMLHttpRequest();
+        oReq.open("GET", url, true);
+        oReq.responseType = "arraybuffer";
+
+        oReq.onload = function(e) {
+            var arraybuffer = oReq.response;
+
+            /* convert data to binary string */
+            var data = new Uint8Array(arraybuffer);
+            var arr = new Array();
+            for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
+            var bstr = arr.join("");
+
+            /* Call XLSX */
+            var workbook = XLSX.read(bstr, {
+                type: "binary"
+            });
+
+            // theSheet = []
+            // for (elem of workbook.Sheets.Sheet1) {
+            //     theSheet.push(elem.v);
+            // }
+            console.log(workbook.Sheets.Sheet1);
+            
+
+            theStrings = [];
+            // console.log(workbook.Strings);
+            for (elem of workbook.Strings) {
+                theStrings.push(elem.t)
+            }
+            
+            console.log(theStrings);
+
+            /* DO SOMETHING WITH workbook HERE */
+            // var first_sheet_name = workbook.SheetNames[0];
+            // /* Get worksheet */
+            // var worksheet = workbook.Sheets[first_sheet_name];
+            // console.log(XLSX.utils.sheet_to_json(worksheet, {
+            //     raw: true
+            // }));
+        }
+
+        oReq.send();
+    </script>
 
     <div id="display">
         <div></div>

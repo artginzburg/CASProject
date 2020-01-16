@@ -299,9 +299,9 @@ schoolMap = {
             })
         }
     },
-    rotate: (deg = -90) => {
-        document.getElementsByClassName('svgFloor')[0].style.transform = `rotate(${deg}deg)`
-    }
+    // rotate: (deg = -90) => {
+    //     document.getElementsByClassName('svgFloor')[0].style.transform = `rotate(${deg}deg)`
+    // }
 }
 
 function addScript(src, onload = '') {
@@ -347,16 +347,13 @@ document.onkeydown = e => {
 
     if (e.code.includes('Arrow')) {
         currentId = document.getElementsByClassName('selected')[0].id
-        console.log(Number(currentId) + 1);
         
         way = e.code.split('Arrow')[1]
-        console.log(way);
         
-        if (way == 'Down') {
+        if (way == 'Down')
             schoolMap.floor.select('', currentId - 1)
-        } else if (way == 'Up') {
+        else if (way == 'Up')
             schoolMap.floor.select('', Number(currentId) + 1)
-        }
     }
 }
 
