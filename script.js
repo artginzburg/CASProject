@@ -1,10 +1,3 @@
-// settings = {
-//     maxLevel: 4,
-//     temp: {
-//         oldLevel: 0
-//     }
-// }
-
 schoolMap = {
     floor: {
         select(e = '', exact) {
@@ -258,7 +251,7 @@ schoolMap = {
                 classes = document.getElementsByTagName('svg').item(4 - level).getElementById('classes');
                 rects = classes.getElementsByTagName('g');
                 for (el of rects) {
-                    console.log(el);
+                    // console.log(el);
                     el.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
                     el.children.item(0).setAttribute('opacity', 0.5);
     
@@ -346,35 +339,23 @@ document.onkeydown = e => {
         schoolMap.floor.select('', e.code.split('Digit')[1])
 
     if (e.code.includes('Arrow')) {
-        if (document.getElementsByClassName('selected').length == 0)
-            currentId = 0
-        else
-            currentId = document.getElementsByClassName('selected')[0].id
+        currentId = document.getElementsByClassName('selected').length == 0 ? 0 :  document.getElementsByClassName('selected')[0].id
             
-            way = e.code.split('Arrow')[1]
-            
-            if (way == 'Down') {
-                if (currentId === 0)
-                    currentId = 5
-                schoolMap.floor.select('', currentId - 1)
-            }
-            else if (way == 'Up')
-                schoolMap.floor.select('', Number(currentId) + 1)
+        way = e.code.split('Arrow')[1]
+        
+        if (way == 'Down') {
+            if (currentId === 0)
+                currentId = 5
+            schoolMap.floor.select('', currentId - 1)
+        } else if (way == 'Up')
+            schoolMap.floor.select('', Number(currentId) + 1)
     }
 }
 
-
-// if (!localStorage.level || localStorage.level > settings.maxLevel)
-//     localStorage.level = 3
-
 document.addEventListener('DOMContentLoaded', function() {
     schoolMap.loadAll();
-    
-    // for (el of document.getElementsByTagName('nav')[0].children)
-    //     el.onclick = e => schoolMap.load(e.toElement.innerHTML)
 })
 
 loadJSON('structure.json', e => {
     window.rooms = JSON.parse(e)
-    console.log(e)
 })
