@@ -99,7 +99,7 @@ body {
     top: 0px;
 }
 .svgFloor.selected {
-    background: none;
+    /* background: none; */
     opacity: 1;
 }
 

@@ -243,7 +243,7 @@ schoolMap = {
 
                         name = rooms.levels[level][key].name
                         console.log(name == 'undefined');
-                        
+
                         theName = document.createElement('p')
                         theName.innerHTML = name == 'undefined' ? '<br>' : name;
 
@@ -346,14 +346,20 @@ document.onkeydown = e => {
         schoolMap.floor.select('', e.code.split('Digit')[1])
 
     if (e.code.includes('Arrow')) {
-        currentId = document.getElementsByClassName('selected')[0].id
-        
-        way = e.code.split('Arrow')[1]
-        
-        if (way == 'Down')
-            schoolMap.floor.select('', currentId - 1)
-        else if (way == 'Up')
-            schoolMap.floor.select('', Number(currentId) + 1)
+        if (document.getElementsByClassName('selected').length == 0)
+            currentId = 0
+        else
+            currentId = document.getElementsByClassName('selected')[0].id
+            
+            way = e.code.split('Arrow')[1]
+            
+            if (way == 'Down') {
+                if (currentId === 0)
+                    currentId = 5
+                schoolMap.floor.select('', currentId - 1)
+            }
+            else if (way == 'Up')
+                schoolMap.floor.select('', Number(currentId) + 1)
     }
 }
 
