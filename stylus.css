@@ -54,16 +54,31 @@ body {
     margin-top: 1.9em;
     margin-bottom: 1.5em;
 }
+.svgFloor.selected:nth-of-type(1) + .levelTitle {
+    margin-top: 2.5em;
+    margin-bottom: 9.3em;
+}
 .svgFloor:nth-of-type(2):hover + .levelTitle {
     margin-top: 4em;
     margin-bottom: 2.8em;
+}
+.svgFloor.selected:nth-of-type(2) + .levelTitle {
+    margin-top: 4em;
+    margin-bottom: 11.3em;
 }
 .svgFloor:nth-of-type(3):hover + .levelTitle {
     margin-top: 4.9em;
     margin-bottom: 3.3em;
 }
+.svgFloor.selected:nth-of-type(3) + .levelTitle {
+    margin-top: 4em;
+    margin-bottom: 10.9em;
+}
 .svgFloor:nth-of-type(4):hover + .levelTitle {
     margin-top: 5.6em;
+}
+.svgFloor.selected:nth-of-type(4) + .levelTitle {
+    margin-top: 4em;
 }
 .svgFloor:hover ~ *, .svgFloor.selected ~ * {
     opacity: .7;
