@@ -139,9 +139,15 @@ body {
 .svgFloor g text {
     pointer-events: none;
 }
-.svgFloor g[onclick] {
+.svgFloor g[onclick] rect {
     cursor: pointer;
     transition-duration: .09s;
+    opacity: .5;
+    fill: rgba(25, 25, 25);
+}
+.svgFloor g[onclick]:hover rect {
+    opacity: .1;
+    fill: white;
 }
 
 .svgFloor.initial, .svgFloor.initial ~ * {
