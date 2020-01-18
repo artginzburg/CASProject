@@ -9,7 +9,6 @@
 
 body {
     color: #bbb;
-    background-color: #1e1e1e;
     background: #1e1e1e;
     max-width: 100vw;
     max-height: 100vh;
@@ -51,8 +50,20 @@ body {
     top: 0;
     max-width: 60%;
 }
-.svgFloor:hover {
-    border-radius: 1em;
+.svgFloor:nth-of-type(1):hover + .levelTitle {
+    margin-top: 1.9em;
+    margin-bottom: 1.5em;
+}
+.svgFloor:nth-of-type(2):hover + .levelTitle {
+    margin-top: 4em;
+    margin-bottom: 2.8em;
+}
+.svgFloor:nth-of-type(3):hover + .levelTitle {
+    margin-top: 4.9em;
+    margin-bottom: 3.3em;
+}
+.svgFloor:nth-of-type(4):hover + .levelTitle {
+    margin-top: 5.6em;
 }
 .svgFloor:hover ~ *, .svgFloor.selected ~ * {
     opacity: .7;
@@ -99,7 +110,6 @@ body {
     top: 0px;
 }
 .svgFloor.selected {
-    /* background: none; */
     opacity: 1;
 }
 
@@ -125,6 +135,18 @@ body {
 }
 .svgFloor.initial ~ * {
     opacity: 0 !important;
+}
+
+.levelTitle {
+    font-size: 45px;
+    transform: perspective(100em) rotateX(-25deg) rotateY(-50deg);
+    margin-left: 13em;
+    margin-bottom: 0;
+    transition-duration: .7s;
+    margin-top: 2.5em;
+}
+.levelTitle:first-of-type {
+    margin-top: 2.75em;
 }
 
 #display {

@@ -191,6 +191,12 @@ schoolMap = {
         for (let level = 4; level >= 1; level--) {
             addScript(`levels/${level}.svg`, theSvg => {
                 document.body.appendChild(theSvg)
+
+                theLevelTitle = document.createElement('p');
+                theLevelTitle.className = 'levelTitle'
+                theLevelTitle.innerText = level;
+                document.body.appendChild(theLevelTitle)
+
                 theSvg.style.opacity = '0'
                 theSvg.style.transform = 'scale(.1)'
                 theSvg.style.transitionDuration = '1s'
