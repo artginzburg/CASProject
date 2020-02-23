@@ -1,7 +1,7 @@
 schoolMap = {
     floor: {
         select(e = '', exact) {
-            console.log(e);
+            // console.log(e);
             schoolMap.floor.deSelect();
 
             if (e == '' || exact)
@@ -68,12 +68,11 @@ schoolMap = {
 
             str = results[id];
         
-            roomDisplay = document.getElementById('roomDisplay');
-            roomDisplay.innerHTML = '';
-
             oldName = (typeof str.name !== 'undefined') ? str.name : '';
             rdbleName = e.target.parentNode.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML;
 
+            roomDisplay = document.getElementById('roomDisplay');
+            roomDisplay.innerHTML = '';
         
             if (id)
                 roomDisplay.innerHTML += `<h2 style="border: none; border-bottom: 2px solid ${typeof str.ladder !== 'undefined' ? str.ladder + '; padding-bottom: .4em' : ''}">${oldName} <sup>${rdbleName}</sup></h2>`;
@@ -376,6 +375,19 @@ document.onkeydown = e => {
         } else if (way == 'Up')
             schoolMap.floor.select('', Number(currentId) + 1)
     }
+}
+
+document.onclick = e => {
+    parents = []
+    element = e.target
+    while (element.parentElement) {
+        parents.push(element)
+        element = element.parentElement
+    }
+    mouseIsNotOnSvg = parents.every(el => el.tagName !== "svg")
+
+    if (mouseIsNotOnSvg)
+        schoolMap.floor.deSelect()
 }
 
 document.addEventListener('DOMContentLoaded', function() {
