@@ -51,40 +51,54 @@ schoolMap = {
     },
     display: {
         open(e) {
+            console.log("opening display");
+            
             id = e.target.id;
+            theLevel = e.target.farthestViewportElement.id;
 
             let results = {};
 
-            for (key in rooms.levels[localStorage.level])
+            for (key in rooms.levels[theLevel])
                 if (key === id)
-                    results[key] = rooms.levels[localStorage.level][key]
+                    results[key] = rooms.levels[theLevel][key]
         
             console.log(results);
+            if (!results)
+                return
+
             str = results[id];
+        
+            roomDisplay = document.getElementById('roomDisplay');
+            roomDisplay.innerHTML = '';
+
+            oldName = (typeof str.name !== 'undefined') ? str.name : '';
             rdbleName = e.target.parentNode.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML;
-            document.querySelector('#display').classList.add('hover');
-        
-            document.querySelector('#display').classList.remove('zoomOutDown');
-            document.querySelector('#display').classList.add('zoomInDown');
-        
-            document.querySelector('#display').style.display = 'block';
-        
-            document.querySelector('#display').innerHTML = '';
+
         
             if (id)
-                document.querySelector('#display').innerHTML += `<h1>${rdbleName}</h1>`;
-            if (typeof str.ladder !== 'undefined')
-                document.querySelector('#display').innerHTML += `<p>located near the <b>${str.ladder}</b> ladder</p>`;
-            if (typeof str.name  !== 'undefined')
-                document.querySelector('#display').innerHTML += `<p>previously named <b>${str.name}</b></p>`;
+                roomDisplay.innerHTML += `<h2 style="border: none; border-bottom: 2px solid ${typeof str.ladder !== 'undefined' ? str.ladder + '; padding-bottom: .4em' : ''}">${oldName} <sup>${rdbleName}</sup></h2>`;
+            if (str.board) {
+                boardHtml = `<p>Whiteboard: `;
+                if (str.board == "smart") {
+                    boardHtml += `Interactive</p>`;
+                } else {
+                    boardHtml += `Simple</p>`;
+                }
+                roomDisplay.innerHTML += boardHtml
+            }
+            if (str.projector)
+                roomDisplay.innerHTML += `<p>Has a projector</p>`;
+            if (str.appletv)
+                roomDisplay.innerHTML += `<p>Apple TV: name</p>`;
+            if (str.seats)
+                roomDisplay.innerHTML += `<p>${str.seats} places</p>`;
+            if (str.additionaly)
+                roomDisplay.innerHTML += `<p>Additional info: ${str.additionaly}</p>`;
+
+            roomDisplay.classList.add('opened');
         },
         close() {
-            document.querySelector('#display').classList.remove('zoomInDown');
-            document.querySelector('#display').classList.add('zoomOutDown');
-        
-            setTimeout(() => {
-                document.querySelector('#display').style.display = 'none';
-            }, 800);
+            document.getElementById('roomDisplay').classList.remove('opened');
         }
     },
     load: level => {
@@ -235,13 +249,13 @@ schoolMap = {
                     display.className = 'opened'
 
                     for (key in rooms.levels[level]) {
-                        console.log(key);
+                        // console.log(key);
                         theP = document.createElement('p');
                         theP.innerHTML = key;
                         display.children.item(0).appendChild(theP);
 
                         name = rooms.levels[level][key].name
-                        console.log(name == 'undefined');
+                        // console.log(name == 'undefined');
 
                         theName = document.createElement('p')
                         theName.innerHTML = name == 'undefined' ? '<br>' : name;
@@ -265,6 +279,8 @@ schoolMap = {
                         el.setAttribute('onclick', '');
                         // el.onclick = schoolMap.display.open;
                     }
+
+                    el.onclick = schoolMap.display.open
 
                     // el.addEventListener('mouseenter', e => {
                     //     if (typeof e.target.getElementsByTagName('text')[0] === 'undefined')
@@ -297,7 +313,7 @@ schoolMap = {
                 }
             })
         }
-    },
+    }
     // rotate: (deg = -90) => {
     //     document.getElementsByClassName('svgFloor')[0].style.transform = `rotate(${deg}deg)`
     // }
@@ -338,8 +354,12 @@ function loadJSON(filename, callback) {
 document.onkeydown = e => {
     // console.log(e);
 
-    if (e.code === 'Escape')
-        schoolMap.floor.deSelect()
+    if (e.code === 'Escape') {
+        if (document.getElementById('roomDisplay').classList.contains('opened'))
+            schoolMap.display.close()
+        else
+            schoolMap.floor.deSelect()
+    }
 
     if (e.code.includes('Digit'))
         schoolMap.floor.select('', e.code.split('Digit')[1])

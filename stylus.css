@@ -171,7 +171,7 @@ body {
 }
 
 #display {
-    position: absolute;
+    position: fixed;
 
     display: flex;
     align-items: center;
@@ -202,6 +202,35 @@ body {
 #display > * {
     width: 50%;
     padding: 1em;
+}
+
+#roomDisplay {
+    position: fixed;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    left: 0;
+
+    padding: 1em;
+    margin: 1em;
+    max-height: 90%;
+
+    text-align: center;
+
+    background-color: rgba(25, 25, 25, .5);
+    box-shadow: 0 0 1em black;
+    opacity: 0;
+    border-radius: .8em;
+
+    transition-duration: .25s;
+
+    white-space: nowrap;
+    overflow: hidden;
+}
+#roomDisplay.opened {
+    opacity: 1;
 }
 
 /* @media (hover:hover) {
