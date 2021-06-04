@@ -1,3 +1,5 @@
+import { floorsQuantity, floorSelector } from './constants.js';
+
 function addScript(src, onload = '') {
   const xhr = new XMLHttpRequest();
   xhr.open('GET', src, false);
@@ -59,17 +61,15 @@ export const schoolMap = {
       theFloor.classList.add('selected')
     },
     deSelect() {
-      for (const el of document.getElementsByClassName('svgFloor')) {
+      for (const el of document.querySelectorAll(floorSelector)) {
         el.style.transform = '';
         el.style.top = '';
-        el.classList.remove('selected')
+        el.classList.remove('selected');
       }
     }
   },
   display: {
     open(e) {
-      console.log('opening display');
-
       const id = e.target.id;
       const theLevel = e.target.farthestViewportElement.id;
 
@@ -112,7 +112,7 @@ export const schoolMap = {
     }
   },
   loadAll: function() {
-    for (let level = 4; level >= 1; level--) {
+    for (let level = floorsQuantity; level >= 1; level--) {
       addScript(`levels/${level}.svg`, theSvg => {
         document.body.appendChild(theSvg)
 
@@ -140,7 +140,7 @@ export const schoolMap = {
           theSvg.style.opacity = ''
         }, 1350);
 
-        document.getElementsByTagName('svg')[4 - level].id = level
+        document.getElementsByTagName('svg')[floorsQuantity - level].id = level
 
         theSvg.onclick = schoolMap.floor.select
 
@@ -171,7 +171,7 @@ export const schoolMap = {
           document.getElementById('display').className = ''
         }
 
-        classes = document.getElementsByTagName('svg').item(4 - level).getElementById('classes');
+        classes = document.getElementsByTagName('svg').item(floorsQuantity - level).getElementById('classes');
         const rects = classes.getElementsByTagName('g');
         for (const el of rects) {
           el.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');

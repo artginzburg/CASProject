@@ -1,12 +1,13 @@
 import { schoolMap } from './schoolMap.js';
+import { floorsQuantity, floorSelector } from './constants.js';
 
-document.onkeydown = e => {
-  if (e.code === 'Escape') {
-    if (document.getElementById('roomDisplay').classList.contains('opened'))
-      schoolMap.display.close();
-    else
-      schoolMap.floor.deSelect();
-  }
+document.addEventListener('DOMContentLoaded', schoolMap.loadAll);
+
+document.body.onkeydown = e => {
+  if (e.code === 'Escape')
+    document.getElementById('roomDisplay').classList.contains('opened')
+      ? schoolMap.display.close()
+      : schoolMap.floor.deSelect();
 
   if (e.code.includes('Digit'))
     schoolMap.floor.select('', e.code.split('Digit')[1]);
@@ -21,21 +22,17 @@ document.onkeydown = e => {
 
     if ((way === 'Down') || (way === 'Right')) {
       if (!currentId)
-        currentId = 5;
+        currentId = floorsQuantity + 1;
       schoolMap.floor.select('', currentId - 1);
     } else if ((way === 'Up') || (way === 'Left'))
       schoolMap.floor.select('', Number(currentId) + 1);
   }
 }
 
-document.onclick = e => {
-  const mouseIsOnSvg = e.target.closest('.svgFloor');
-
-  if (!mouseIsOnSvg)
+document.body.onclick = e => {
+  if (!e.target.closest(floorSelector))
     schoolMap.floor.deSelect();
 }
-
-document.addEventListener('DOMContentLoaded', schoolMap.loadAll);
 
 fetch('structure.json')
     .then(res => res.json())
