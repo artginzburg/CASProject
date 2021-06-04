@@ -93,13 +93,12 @@ export const schoolMap = {
 
       if (id)
         roomDisplay.innerHTML += `<h2 style="border: none; border-bottom: 2px solid ${typeof str.ladder !== 'undefined' ? str.ladder + '; padding-bottom: .4em' : ''}">${oldName} <sup>${rdbleName}</sup></h2>`;
-      if (str.board) {
+      if (str.board)
         roomDisplay.innerHTML +=
           '<p>Whiteboard: ' +
-          ((str.board === 'smart') ?
-            'Interactive</p>' :
-            'Simple</p>');
-      }
+            ((str.board === 'smart') ?
+              'Interactive</p>' :
+              'Simple</p>');
       if (str.projector)
         roomDisplay.innerHTML += `<p>Has a projector</p>`;
       if (str.appletv)

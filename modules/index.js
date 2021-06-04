@@ -5,12 +5,12 @@ document.addEventListener('DOMContentLoaded', schoolMap.loadAll);
 
 document.body.onkeydown = e => {
   if (e.code === 'Escape')
-    document.getElementById('roomDisplay').classList.contains('opened')
+    return document.getElementById('roomDisplay').classList.contains('opened')
       ? schoolMap.display.close()
       : schoolMap.floor.deSelect();
 
   if (e.code.includes('Digit'))
-    schoolMap.floor.select('', e.code.split('Digit')[1]);
+    return schoolMap.floor.select('', e.code.split('Digit')[1]);
 
   if (e.code.includes('Arrow')) {
     const allSelected = document.querySelector('.selected');
@@ -29,10 +29,9 @@ document.body.onkeydown = e => {
   }
 }
 
-document.body.onclick = e => {
-  if (!e.target.closest(floorSelector))
-    schoolMap.floor.deSelect();
-}
+document.body.onclick = e =>
+  !e.target.closest(floorSelector)
+    && schoolMap.floor.deSelect();
 
 fetch('structure.json')
     .then(res => res.json())
