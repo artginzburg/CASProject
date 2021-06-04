@@ -1,12 +1,31 @@
-schoolMap = {
+function addScript(src, onload = '') {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', src, false);
+  xhr.overrideMimeType('image/svg+xml'); // not needed if your server delivers SVG with correct MIME type (just to be on the safe side)
+  xhr.send('');
+  if (xhr.responseXML)
+    onload(xhr.responseXML.documentElement);
+  else {
+    text = 'Error loading ' + src
+    console.log(text);
+    alert(text);
+  }
+}
+
+export const schoolMap = {
   floor: {
     select(e = '', exact) {
       schoolMap.floor.deSelect();
 
-      if (e == '' || exact)
-        theFloor = document.getElementById(exact)
-      else
-        theFloor = e.target.farthestViewportElement ? e.target.farthestViewportElement : e.target
+      const theFloor = (e == '' || exact)
+        ? document.getElementById(exact)
+        : e.target.farthestViewportElement ? e.target.farthestViewportElement : e.target;
+
+      if (!theFloor)
+        return;
+
+      let marginBefore;
+      let marginAfter;
 
       switch (theFloor.id) {
         case '4':
@@ -30,7 +49,7 @@ schoolMap = {
       theFloor.style.transform = 'none';
       theFloor.style.top = marginBefore;
 
-      theEl = theFloor.nextElementSibling;
+      let theEl = theFloor.nextElementSibling;
 
       while (theEl) {
         theEl.style.top = marginAfter;
@@ -38,10 +57,9 @@ schoolMap = {
       }
 
       theFloor.classList.add('selected')
-
     },
     deSelect() {
-      for (el of document.getElementsByClassName('svgFloor')) {
+      for (const el of document.getElementsByClassName('svgFloor')) {
         el.style.transform = '';
         el.style.top = '';
         el.classList.remove('selected')
@@ -98,7 +116,7 @@ schoolMap = {
       addScript(`levels/${level}.svg`, theSvg => {
         document.body.appendChild(theSvg)
 
-        theLevelTitle = document.createElement('p');
+        const theLevelTitle = document.createElement('p');
         theLevelTitle.className = 'levelTitle'
         theLevelTitle.innerText = level;
         document.body.appendChild(theLevelTitle)
@@ -129,20 +147,20 @@ schoolMap = {
         theSvg.onmouseenter = function() {
           display = document.getElementById('display');
 
-          for (el of display.children) {
+          for (const el of display.children) {
             el.innerHTML = ''
           };
 
           display.className = 'opened'
 
-          for (key in rooms.levels[level]) {
-            theP = document.createElement('p');
+          for (const key in rooms.levels[level]) {
+            const theP = document.createElement('p');
             theP.innerHTML = key;
             display.children.item(0).appendChild(theP);
 
             name = rooms.levels[level][key].name
 
-            theName = document.createElement('p')
+            const theName = document.createElement('p')
             theName.innerHTML = name == 'undefined' ? '<br>' : name;
 
             display.children.item(1).appendChild(theName)
@@ -154,8 +172,8 @@ schoolMap = {
         }
 
         classes = document.getElementsByTagName('svg').item(4 - level).getElementById('classes');
-        rects = classes.getElementsByTagName('g');
-        for (el of rects) {
+        const rects = classes.getElementsByTagName('g');
+        for (const el of rects) {
           el.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
           el.children.item(0).setAttribute('opacity', 0.5);
 
@@ -169,63 +187,3 @@ schoolMap = {
     }
   }
 }
-
-function addScript(src, onload = '') {
-  xhr = new XMLHttpRequest();
-  xhr.open('GET', src, false);
-  xhr.overrideMimeType('image/svg+xml'); // not needed if your server delivers SVG with correct MIME type (just to be on the safe side)
-  xhr.send('');
-  if (xhr.responseXML)
-    onload(xhr.responseXML.documentElement);
-  else {
-    text = 'Error loading ' + src
-    console.log(text);
-    alert(text);
-  }
-}
-
-document.onkeydown = e => {
-  if (e.code === 'Escape') {
-    if (document.getElementById('roomDisplay').classList.contains('opened'))
-      schoolMap.display.close()
-    else
-      schoolMap.floor.deSelect()
-  }
-
-  if (e.code.includes('Digit'))
-    schoolMap.floor.select('', e.code.split('Digit')[1])
-
-  if (e.code.includes('Arrow')) {
-    currentId = document.getElementsByClassName('selected').length == 0 ? 0 : document.getElementsByClassName('selected')[0].id
-
-    way = e.code.split('Arrow')[1]
-
-    if (way == 'Down') {
-      if (currentId === 0)
-        currentId = 5
-      schoolMap.floor.select('', currentId - 1)
-    } else if (way == 'Up')
-      schoolMap.floor.select('', Number(currentId) + 1)
-  }
-}
-
-document.onclick = e => {
-  const parents = []
-  let element = e.target
-  while (element.parentElement) {
-    parents.push(element)
-    element = element.parentElement
-  }
-  const mouseIsNotOnSvg = !parents.some(el => el.tagName === 'svg');
-
-  if (mouseIsNotOnSvg)
-    schoolMap.floor.deSelect()
-}
-
-document.addEventListener('DOMContentLoaded', schoolMap.loadAll)
-
-fetch('structure.json')
-    .then(res => res.json())
-    .then(result =>
-        window.rooms = result
-    );
