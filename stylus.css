@@ -238,3 +238,10 @@ body {
         box-shadow: 0 0 2em white;
     }
 } */
+
+svg {
+    pointer-events: none;
+}
+svg * {
+    pointer-events: all;
+}
