@@ -12,12 +12,15 @@ document.onkeydown = e => {
     schoolMap.floor.select('', e.code.split('Digit')[1]);
 
   if (e.code.includes('Arrow')) {
-    let currentId = document.getElementsByClassName('selected').length == 0 ? 0 : document.getElementsByClassName('selected')[0].id;
+    const allSelected = document.querySelector('.selected');
+    let currentId = allSelected
+      ? allSelected.id
+      : 0;
 
     const way = e.code.split('Arrow')[1];
 
     if ((way === 'Down') || (way === 'Right')) {
-      if (currentId === 0)
+      if (!currentId)
         currentId = 5;
       schoolMap.floor.select('', currentId - 1);
     } else if ((way === 'Up') || (way === 'Left'))
@@ -26,13 +29,7 @@ document.onkeydown = e => {
 }
 
 document.onclick = e => {
-  const parents = [];
-  let element = e.target;
-  while (element.parentElement) {
-    parents.push(element);
-    element = element.parentElement;
-  }
-  const mouseIsOnSvg = parents.some(el => el.tagName === 'svg');
+  const mouseIsOnSvg = e.target.closest('.svgFloor');
 
   if (!mouseIsOnSvg)
     schoolMap.floor.deSelect();
