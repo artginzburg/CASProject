@@ -1,5 +1,9 @@
 import { floorsQuantity, floorSelector } from './constants.js';
 
+const roomDisplay = document.getElementById('roomDisplay');
+const display = document.getElementById('display');
+const displayOpenedClass = 'opened';
+
 const addScript = (src, onload = '') =>
   fetch(src)
     .then(res => res.ok
@@ -82,10 +86,9 @@ export const schoolMap = {
       if (!str)
         return;
 
-      const oldName = (typeof str.name !== 'undefined') ? str.name : '';
+      const oldName = (typeof str.name === 'undefined') ? '' : str.name;
       const rdbleName = e.target.parentNode.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML;
 
-      roomDisplay = document.getElementById('roomDisplay');
       roomDisplay.innerHTML = '';
 
       if (id)
@@ -106,10 +109,10 @@ export const schoolMap = {
       if (str.additionaly)
         roomDisplay.innerHTML += `<p>Additional info: ${str.additionaly}</p>`;
 
-      roomDisplay.classList.add('opened');
+      roomDisplay.classList.add(displayOpenedClass);
     },
     close() {
-      document.getElementById('roomDisplay').classList.remove('opened');
+      roomDisplay.classList.remove(displayOpenedClass);
     }
   },
   loadAll: async function() {
@@ -141,35 +144,35 @@ export const schoolMap = {
           theSvg.style.opacity = ''
         }, 1350);
 
-        document.getElementsByTagName('svg')[floorsQuantity - level].id = level
+        document.getElementsByTagName('svg')[floorsQuantity - level].id = level;
 
-        theSvg.onclick = schoolMap.floor.select
+        theSvg.onclick = schoolMap.floor.select;
 
         theSvg.onmouseenter = function() {
-          display = document.getElementById('display');
+          if (!rooms.levels[level])
+            return;
 
-          for (const el of display.children) {
-            el.innerHTML = ''
-          };
+          for (const el of display.children)
+            el.innerHTML = '';
 
-          display.className = 'opened'
+          display.classList.add(displayOpenedClass);
 
           for (const key in rooms.levels[level]) {
             const theP = document.createElement('p');
-            theP.innerHTML = key;
+            theP.textContent = key;
             display.children.item(0).appendChild(theP);
 
-            name = rooms.levels[level][key].name
+            const name = rooms.levels[level][key].name;
 
-            const theName = document.createElement('p')
-            theName.innerHTML = name == 'undefined' ? '<br>' : name;
+            const theName = document.createElement('p');
+            theName.innerHTML = name ?? '<br>';
 
-            display.children.item(1).appendChild(theName)
+            display.children.item(1).appendChild(theName);
           }
         }
 
         theSvg.onmouseleave = function() {
-          document.getElementById('display').className = ''
+          display.classList.remove(displayOpenedClass);
         }
 
         classes = document.getElementsByTagName('svg').item(floorsQuantity - level).getElementById('classes');
