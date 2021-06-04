@@ -1,18 +1,19 @@
 import { floorsQuantity, floorSelector } from './constants.js';
 
-function addScript(src, onload = '') {
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', src, false);
-  xhr.overrideMimeType('image/svg+xml'); // not needed if your server delivers SVG with correct MIME type (just to be on the safe side)
-  xhr.send('');
-  if (xhr.responseXML)
-    onload(xhr.responseXML.documentElement);
-  else {
-    text = 'Error loading ' + src
-    console.log(text);
-    alert(text);
-  }
-}
+const addScript = (src, onload = '') =>
+  fetch(src)
+    .then(res => res.ok
+      ? res.text()
+      : Promise.reject(`Error ${res.status} loading ${src}`)
+    )
+    .then(result => {
+      const el = document.createElement('div');
+      el.innerHTML = result.trim();
+      return el.firstChild;
+    })
+    .then(onload)
+    .catch(console.error)
+;
 
 export const schoolMap = {
   floor: {
@@ -111,9 +112,9 @@ export const schoolMap = {
       document.getElementById('roomDisplay').classList.remove('opened');
     }
   },
-  loadAll: function() {
+  loadAll: async function() {
     for (let level = floorsQuantity; level >= 1; level--) {
-      addScript(`levels/${level}.svg`, theSvg => {
+      await addScript(`levels/${level}.svg`, theSvg => {
         document.body.appendChild(theSvg)
 
         const theLevelTitle = document.createElement('p');
