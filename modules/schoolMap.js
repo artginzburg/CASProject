@@ -28,25 +28,32 @@ export const schoolMap = {
       if (!theFloor)
         return;
 
+      const firstMarginBefore = 275;
+      const marginBeforeCoefficient = 1.85;
+      const secondMarginBefore = firstMarginBefore + (firstMarginBefore / (marginBeforeCoefficient * 1));
+      const thirdMarginBefore = secondMarginBefore + (firstMarginBefore / (marginBeforeCoefficient * 2));
+
+      const firstMarginAfter = 415;
+      const secondMarginAfter = firstMarginAfter + 165;
+      const thirdMarginAfter = secondMarginAfter + 20;
+
       let marginBefore;
       let marginAfter;
 
       switch (theFloor.id) {
         case '4':
-          marginBefore = 0
-          marginAfter = 415
+          marginAfter = firstMarginAfter
           break;
         case '3':
-          marginBefore = 270
-          marginAfter = 580
+          marginBefore = firstMarginBefore
+          marginAfter = secondMarginAfter
           break;
         case '2':
-          marginBefore = 410
-          marginAfter = 560
+          marginBefore = secondMarginBefore
+          marginAfter = thirdMarginAfter
           break;
         case '1':
-          marginBefore = 490
-          marginAfter = 0
+          marginBefore = thirdMarginBefore
           break;
       }
 
