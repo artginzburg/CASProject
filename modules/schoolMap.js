@@ -1,10 +1,7 @@
-import { floorsQuantity, floorSelector } from './constants.js';
+import { floorsQuantity, floorSelector, displayOpenedClass, selectedClass } from './constants.js';
+import { roomDisplay, display } from './elements.js';
 
-const roomDisplay = document.getElementById('roomDisplay');
-const display = document.getElementById('display');
-const displayOpenedClass = 'opened';
-
-const addScript = (src, onload = '') =>
+const fetchSvg = (src, onload = '') =>
   fetch(src)
     .then(res => res.ok
       ? res.text()
@@ -26,7 +23,7 @@ export const schoolMap = {
 
       const theFloor = (e == '' || exact)
         ? document.getElementById(exact)
-        : e.target.farthestViewportElement ? e.target.farthestViewportElement : e.target;
+        : e.target.farthestViewportElement ?? e.target;
 
       if (!theFloor)
         return;
@@ -36,22 +33,26 @@ export const schoolMap = {
 
       switch (theFloor.id) {
         case '4':
-          marginBefore = '0'
-          marginAfter = '415px'
+          marginBefore = 0
+          marginAfter = 415
           break;
         case '3':
-          marginBefore = '270px'
-          marginAfter = '580px'
+          marginBefore = 270
+          marginAfter = 580
           break;
         case '2':
-          marginBefore = '410px'
-          marginAfter = '560px'
+          marginBefore = 410
+          marginAfter = 560
           break;
         case '1':
-          marginBefore = '490px'
-          marginAfter = '0'
+          marginBefore = 490
+          marginAfter = 0
           break;
       }
+
+      const scaleUnits = 'px';
+      marginBefore += scaleUnits;
+      marginAfter += scaleUnits;
 
       theFloor.style.transform = 'none';
       theFloor.style.top = marginBefore;
@@ -63,13 +64,13 @@ export const schoolMap = {
         theEl = theEl.nextElementSibling;
       }
 
-      theFloor.classList.add('selected')
+      theFloor.classList.add(selectedClass);
     },
     deSelect() {
       for (const el of document.querySelectorAll(floorSelector)) {
         el.style.transform = '';
         el.style.top = '';
-        el.classList.remove('selected');
+        el.classList.remove(selectedClass);
       }
     }
   },
@@ -86,19 +87,24 @@ export const schoolMap = {
       if (!str)
         return;
 
-      const oldName = (typeof str.name === 'undefined') ? '' : str.name;
+      const oldName = str.name ?? '';
       const rdbleName = e.target.parentNode.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML;
 
       roomDisplay.innerHTML = '';
 
       if (id)
-        roomDisplay.innerHTML += `<h2 style="border: none; border-bottom: 2px solid ${typeof str.ladder !== 'undefined' ? str.ladder + '; padding-bottom: .4em' : ''}">${oldName} <sup>${rdbleName}</sup></h2>`;
+        roomDisplay.innerHTML +=
+          `<h2 style="border: none; border-bottom: 2px solid ${
+            str.ladder
+              ? (str.ladder + '; padding-bottom: .4em')
+              : ''
+          }">${oldName} <sup>${rdbleName}</sup></h2>`;
       if (str.board)
         roomDisplay.innerHTML +=
           '<p>Whiteboard: ' +
-            ((str.board === 'smart') ?
-              'Interactive</p>' :
-              'Simple</p>');
+            ((str.board === 'smart')
+              ? 'Interactive</p>'
+              : 'Simple</p>');
       if (str.projector)
         roomDisplay.innerHTML += `<p>Has a projector</p>`;
       if (str.appletv)
@@ -116,20 +122,22 @@ export const schoolMap = {
   },
   loadAll: async function() {
     for (let level = floorsQuantity; level >= 1; level--) {
-      await addScript(`levels/${level}.svg`, theSvg => {
-        document.body.appendChild(theSvg)
+      await fetchSvg(`levels/${level}.svg`, theSvg => {
+        document.body.appendChild(theSvg);
+
+        const initialClass = 'initial';
 
         const theLevelTitle = document.createElement('p');
         theLevelTitle.className = 'levelTitle'
         theLevelTitle.innerText = level;
         document.body.appendChild(theLevelTitle)
 
-        theSvg.style.opacity = '0'
+        theSvg.style.opacity = 0
         theSvg.style.transform = 'scale(.1)'
         theSvg.style.transitionDuration = '1s'
-        theSvg.classList.add('initial')
+        theSvg.classList.add(initialClass)
         setTimeout(() => {
-          theSvg.style.opacity = '1'
+          theSvg.style.opacity = 1
           theSvg.style.transform = 'scale(1)'
           theSvg.style.transitionDuration = '1s'
         }, 200);
@@ -137,7 +145,7 @@ export const schoolMap = {
           theSvg.style.transform = 'perspective(100em) rotateX(70deg) rotateZ(-30deg)';
         }, 800);
         setTimeout(() => {
-          theSvg.classList.remove('initial')
+          theSvg.classList.remove(initialClass)
           theSvg.style.transform = ''
           theSvg.style.transitionDuration = ''
           theSvg.style.opacity = ''
@@ -177,7 +185,8 @@ export const schoolMap = {
         classes = document.getElementsByTagName('svg').item(floorsQuantity - level).getElementById('classes');
         const rects = classes.getElementsByTagName('g');
         for (const el of rects) {
-          el.children.item(0).setAttribute('fill', 'rgba(25, 25, 25)');
+          const lightness = 25;
+          el.children.item(0).setAttribute('fill', `rgba(${lightness}, ${lightness}, ${lightness})`);
           el.children.item(0).setAttribute('opacity', 0.5);
 
           if (!el.id.includes('WC') && !el.id.includes('room')) {

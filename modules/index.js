@@ -1,24 +1,31 @@
 import { schoolMap } from './schoolMap.js';
-import { floorsQuantity, floorSelector } from './constants.js';
+import { floorsQuantity, floorSelector, displayOpenedClass, selectedSelector } from './constants.js';
+import { roomDisplay } from './elements.js';
+
+const digitString = 'Digit';
+const arrowString = 'Arrow';
+const escapeString = 'Escape';
+
+const structurePath = 'structure.json';
 
 document.addEventListener('DOMContentLoaded', schoolMap.loadAll);
 
 document.body.onkeydown = e => {
-  if (e.code === 'Escape')
-    return document.getElementById('roomDisplay').classList.contains('opened')
+  if (e.code === escapeString)
+    return roomDisplay.classList.contains(displayOpenedClass)
       ? schoolMap.display.close()
       : schoolMap.floor.deSelect();
 
-  if (e.code.includes('Digit'))
-    return schoolMap.floor.select('', e.code.split('Digit')[1]);
+  if (e.code.includes(digitString))
+    return schoolMap.floor.select('', e.code.split(digitString)[1]);
 
-  if (e.code.includes('Arrow')) {
-    const allSelected = document.querySelector('.selected');
+  if (e.code.includes(arrowString)) {
+    const allSelected = document.querySelector(selectedSelector);
     let currentId = allSelected
       ? allSelected.id
       : 0;
 
-    const way = e.code.split('Arrow')[1];
+    const way = e.code.split(arrowString)[1];
 
     if ((way === 'Down') || (way === 'Right')) {
       if (!currentId)
@@ -30,10 +37,10 @@ document.body.onkeydown = e => {
 }
 
 document.body.onclick = e =>
-  !e.target.closest(floorSelector)
-    && schoolMap.floor.deSelect();
+  e.target.closest(floorSelector)
+    ?? schoolMap.floor.deSelect();
 
-fetch('structure.json')
+fetch(structurePath)
     .then(res => res.json())
     .then(result =>
         window.rooms = result
