@@ -1,20 +1,6 @@
 import { floorsQuantity, floorSelector, displayOpenedClass, selectedClass } from './constants.js';
 import { roomDisplay, display } from './elements.js';
-
-const fetchSvg = (src, onload = '') =>
-  fetch(src)
-    .then(res => res.ok
-      ? res.text()
-      : Promise.reject(`Error ${res.status} loading ${src}`)
-    )
-    .then(result => {
-      const el = document.createElement('div');
-      el.innerHTML = result.trim();
-      return el.firstChild;
-    })
-    .then(onload)
-    .catch(console.error)
-;
+import { fetchSvg } from './util.js';
 
 export const schoolMap = {
   floor: {
@@ -198,9 +184,8 @@ export const schoolMap = {
 
           if (!el.id.includes('WC') && !el.id.includes('room')) {
             el.setAttribute('onclick', '');
+            el.onclick = schoolMap.display.open;
           }
-
-          el.onclick = schoolMap.display.open;
         }
       })
     }
