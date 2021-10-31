@@ -7,17 +7,19 @@ export const schoolMap = {
     select(e = '', exact) {
       schoolMap.floor.deSelect();
 
-      const theFloor = (e == '' || exact)
-        ? document.getElementById(exact)
-        : e.target.farthestViewportElement ?? e.target;
+      const theFloor =
+        e == '' || exact
+          ? document.getElementById(exact)
+          : e.target.farthestViewportElement ?? e.target;
 
-      if (!theFloor)
-        return;
+      if (!theFloor) return;
 
       const firstMarginBefore = 275;
       const marginBeforeCoefficient = 1.85;
-      const secondMarginBefore = firstMarginBefore + (firstMarginBefore / (marginBeforeCoefficient * 1));
-      const thirdMarginBefore = secondMarginBefore + (firstMarginBefore / (marginBeforeCoefficient * 2));
+      const secondMarginBefore =
+        firstMarginBefore + firstMarginBefore / (marginBeforeCoefficient * 1);
+      const thirdMarginBefore =
+        secondMarginBefore + firstMarginBefore / (marginBeforeCoefficient * 2);
 
       const firstMarginAfter = 415;
       const secondMarginAfter = firstMarginAfter + 165;
@@ -28,18 +30,18 @@ export const schoolMap = {
 
       switch (theFloor.id) {
         case '4':
-          marginAfter = firstMarginAfter
+          marginAfter = firstMarginAfter;
           break;
         case '3':
-          marginBefore = firstMarginBefore
-          marginAfter = secondMarginAfter
+          marginBefore = firstMarginBefore;
+          marginAfter = secondMarginAfter;
           break;
         case '2':
-          marginBefore = secondMarginBefore
-          marginAfter = thirdMarginAfter
+          marginBefore = secondMarginBefore;
+          marginAfter = thirdMarginAfter;
           break;
         case '1':
-          marginBefore = thirdMarginBefore
+          marginBefore = thirdMarginBefore;
           break;
       }
 
@@ -65,7 +67,7 @@ export const schoolMap = {
         el.style.top = '';
         el.classList.remove(selectedClass);
       }
-    }
+    },
   },
   display: {
     open(e) {
@@ -73,87 +75,75 @@ export const schoolMap = {
       const theLevel = e.target.farthestViewportElement.id;
 
       const levelStructure = rooms.levels[theLevel];
-      if (!levelStructure)
-        return;
+      if (!levelStructure) return;
 
       const str = levelStructure[id];
-      if (!str)
-        return;
+      if (!str) return;
 
       const oldName = str.name ?? '';
-      const rdbleName = e.target.parentNode.getElementsByTagName('text')[0].getElementsByTagName('tspan')[0].innerHTML;
+      const rdbleName = e.target.parentNode
+        .getElementsByTagName('text')[0]
+        .getElementsByTagName('tspan')[0].innerHTML;
 
       roomDisplay.innerHTML = '';
 
       if (id)
-        roomDisplay.innerHTML +=
-          `<h2 style="border: none; border-bottom: 2px solid ${
-            str.ladder
-              ? (str.ladder + '; padding-bottom: .4em')
-              : ''
-          }">${oldName} <sup>${rdbleName}</sup></h2>`;
+        roomDisplay.innerHTML += `<h2 style="border: none; border-bottom: 2px solid ${
+          str.ladder ? str.ladder + '; padding-bottom: .4em' : ''
+        }">${oldName} <sup>${rdbleName}</sup></h2>`;
       if (str.board)
         roomDisplay.innerHTML +=
-          '<p>Whiteboard: ' +
-            ((str.board === 'smart')
-              ? 'Interactive</p>'
-              : 'Simple</p>');
-      if (str.projector)
-        roomDisplay.innerHTML += `<p>Has a projector</p>`;
-      if (str.appletv)
-        roomDisplay.innerHTML += `<p>Apple TV: name</p>`;
-      if (str.seats)
-        roomDisplay.innerHTML += `<p>${str.seats} places</p>`;
-      if (str.additionaly)
-        roomDisplay.innerHTML += `<p>Additional info: ${str.additionaly}</p>`;
+          '<p>Whiteboard: ' + (str.board === 'smart' ? 'Interactive</p>' : 'Simple</p>');
+      if (str.projector) roomDisplay.innerHTML += `<p>Has a projector</p>`;
+      if (str.appletv) roomDisplay.innerHTML += `<p>Apple TV: name</p>`;
+      if (str.seats) roomDisplay.innerHTML += `<p>${str.seats} places</p>`;
+      if (str.additionaly) roomDisplay.innerHTML += `<p>Additional info: ${str.additionaly}</p>`;
 
       roomDisplay.classList.add(displayOpenedClass);
     },
     close() {
       roomDisplay.classList.remove(displayOpenedClass);
-    }
+    },
   },
-  loadAll: async function() {
+  loadAll: async function () {
     for (let level = floorsQuantity; level >= 1; level--) {
-      await fetchSvg(`levels/${level}.svg`, theSvg => {
+      await fetchSvg(`levels/${level}.svg`, (theSvg) => {
         document.body.appendChild(theSvg);
 
         const initialClass = 'initial';
 
         const theLevelTitle = document.createElement('p');
-        theLevelTitle.className = 'levelTitle'
+        theLevelTitle.className = 'levelTitle';
         theLevelTitle.innerText = level;
-        document.body.appendChild(theLevelTitle)
+        document.body.appendChild(theLevelTitle);
 
-        theSvg.style.opacity = 0
-        theSvg.style.transform = 'scale(.1)'
-        theSvg.style.transitionDuration = '1s'
-        theSvg.classList.add(initialClass)
+        theSvg.style.opacity = 0;
+        theSvg.style.transform = 'scale(.1)';
+        theSvg.style.transitionDuration = '1s';
+        theSvg.classList.add(initialClass);
         setTimeout(() => {
-          theSvg.style.opacity = 1
-          theSvg.style.transform = 'scale(1)'
-          theSvg.style.transitionDuration = '1s'
+          theSvg.style.opacity = 1;
+          theSvg.style.transform = 'scale(1)';
+          theSvg.style.transitionDuration = '1s';
         }, 200);
         setTimeout(() => {
           theSvg.style.transform = 'perspective(100em) rotateX(70deg) rotateZ(-30deg)';
         }, 800);
         setTimeout(() => {
-          theSvg.classList.remove(initialClass)
-          theSvg.style.transform = ''
-          theSvg.style.transitionDuration = ''
-          theSvg.style.opacity = ''
+          theSvg.classList.remove(initialClass);
+          theSvg.style.transform = '';
+          theSvg.style.transitionDuration = '';
+          theSvg.style.opacity = '';
         }, 1350);
 
         document.getElementsByTagName('svg')[floorsQuantity - level].id = level;
 
         theSvg.onclick = schoolMap.floor.select;
 
-        theSvg.onmouseenter = function() {
-          if (!rooms.levels[level])
-            return;
+        theSvg.onmouseenter = function () {
+          if (!rooms.levels[level]) return;
 
-          for (const el of display.children)
-            el.innerHTML = '';
+          for (const el of display.children) el.innerHTML = '';
 
           display.classList.add(displayOpenedClass);
 
@@ -169,17 +159,22 @@ export const schoolMap = {
 
             display.children.item(1).appendChild(theName);
           }
-        }
+        };
 
-        theSvg.onmouseleave = function() {
+        theSvg.onmouseleave = function () {
           display.classList.remove(displayOpenedClass);
-        }
+        };
 
-        classes = document.getElementsByTagName('svg').item(floorsQuantity - level).getElementById('classes');
+        classes = document
+          .getElementsByTagName('svg')
+          .item(floorsQuantity - level)
+          .getElementById('classes');
         const rects = classes.getElementsByTagName('g');
         for (const el of rects) {
           const lightness = 25;
-          el.children.item(0).setAttribute('fill', `rgba(${lightness}, ${lightness}, ${lightness})`);
+          el.children
+            .item(0)
+            .setAttribute('fill', `rgba(${lightness}, ${lightness}, ${lightness})`);
           el.children.item(0).setAttribute('opacity', 0.5);
 
           if (!el.id.includes('WC') && !el.id.includes('room')) {
@@ -187,7 +182,7 @@ export const schoolMap = {
             el.onclick = schoolMap.display.open;
           }
         }
-      })
+      });
     }
-  }
-}
+  },
+};

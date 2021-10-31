@@ -1,146 +1,146 @@
 {
-    "levels": {
-        "4": {
-            "401": {
-                "ladder": "green",
-                "name": "",
-                "projector": true,
-                "appletv": false,
-                "board": true,
-                "seats": 15,
-                "additionaly": "3 компьютера, печь Емели"
-            },
-            "402": {
-                "ladder": "green",
-                "name": "Chemistry"
-            },
-            "403": {
-                "ladder": "green",
-                "name": "Chemistry l"
-            },
-            "404": {
-                "ladder": "green",
-                "name": "Biology"
-            },
-            "405": {
-                "ladder": "green",
-                "name": "Study room"
-            },
-            "406": {
-                "ladder": "blue",
-                "name": "Study room"
-            },
-            "407": {
-                "ladder": "blue",
-                "name": "Dance hall"
-            },
-            "408": {
-                "ladder": "blue"
-            },
-            "409": {
-                "ladder": "blue",
-                "name": ""
-            },
-            "410": {
-                "ladder": "blue",
-                "name": "Psychology"
-            },
-            "library": {
-                "ladder": "yellow"
-            },
-            "411": {
-                "ladder": "yellow",
-                "name": "Russian 2"
-            },
-            "412": {
-                "ladder": "yellow"
-            },
-            "413": {
-                "ladder": "yellow",
-                "name": "English 6",
-                "projector": true,
-                "appletv": true,
-                "board": "smart",
-                "seats": 15,
-                "teachercomp": true
-            },
-            "414": {
-                "ladder": "red"
-            },
-            "415": {
-                "ladder": "red",
-                "name": "English 5",
-                "projector": true,
-                "appletv": false,
-                "board": "smart",
-                "seats": 11,
-                "teachercomp": true
-            },
-            "416": {
-                "ladder": "red",
-                "name": "Arts"
-            },
-            "417": {
-                "ladder": "red",
-                "name": "Arts 2",
-                "projector": true
-            },
-            "418": {
-                "ladder": "red",
-                "name": "English 4"
-            }
-        },
-        "3": {
-            "301": {
-                "ladder": "green",
-                "name": "Physics"
-            },
-            "302": {
-                "ladder": "green",
-                "name": "Spanish"
-            },
-            "303": {
-                "ladder": "blue",
-                "name": "German"
-            },
-            "3031": {
-                "ladder": "blue",
-                "name": "French"
-            },
-            "304": {
-                "ladder": "blue",
-                "name": "History"
-            },
-            "305": {
-                "ladder": "blue",
-                "name": "Geography"
-            },
-            "306": {
-                "ladder": "yellow",
-                "name": "Russian 3"
-            },
-            "307": {
-                "ladder": "yellow",
-                "name": "Russian 1"
-            },
-            "308": {
-                "ladder": "yellow",
-                "name": "Teachers'"
-            },
-            "309": {
-                "ladder": "red",
-                "name": "Maths 3",
-                "projector": true
-            },
-            "310": {
-                "ladder": "red",
-                "name": "Maths 2"
-            },
-            "311": {
-                "ladder": "red",
-                "name": "Maths 1",
-                "projector": true
-            }
-        }
+  "levels": {
+    "3": {
+      "301": {
+        "ladder": "green",
+        "name": "Physics"
+      },
+      "302": {
+        "ladder": "green",
+        "name": "Spanish"
+      },
+      "303": {
+        "ladder": "blue",
+        "name": "German"
+      },
+      "304": {
+        "ladder": "blue",
+        "name": "History"
+      },
+      "305": {
+        "ladder": "blue",
+        "name": "Geography"
+      },
+      "306": {
+        "ladder": "yellow",
+        "name": "Russian 3"
+      },
+      "307": {
+        "ladder": "yellow",
+        "name": "Russian 1"
+      },
+      "308": {
+        "ladder": "yellow",
+        "name": "Teachers'"
+      },
+      "309": {
+        "ladder": "red",
+        "name": "Maths 3",
+        "projector": true
+      },
+      "310": {
+        "ladder": "red",
+        "name": "Maths 2"
+      },
+      "311": {
+        "ladder": "red",
+        "name": "Maths 1",
+        "projector": true
+      },
+      "3031": {
+        "ladder": "blue",
+        "name": "French"
+      }
+    },
+    "4": {
+      "401": {
+        "additionaly": "3 компьютера, печь Емели",
+        "appletv": false,
+        "board": true,
+        "ladder": "green",
+        "name": "",
+        "projector": true,
+        "seats": 15
+      },
+      "402": {
+        "ladder": "green",
+        "name": "Chemistry"
+      },
+      "403": {
+        "ladder": "green",
+        "name": "Chemistry l"
+      },
+      "404": {
+        "ladder": "green",
+        "name": "Biology"
+      },
+      "405": {
+        "ladder": "green",
+        "name": "Study room"
+      },
+      "406": {
+        "ladder": "blue",
+        "name": "Study room"
+      },
+      "407": {
+        "ladder": "blue",
+        "name": "Dance hall"
+      },
+      "408": {
+        "ladder": "blue"
+      },
+      "409": {
+        "ladder": "blue",
+        "name": ""
+      },
+      "410": {
+        "ladder": "blue",
+        "name": "Psychology"
+      },
+      "411": {
+        "ladder": "yellow",
+        "name": "Russian 2"
+      },
+      "412": {
+        "ladder": "yellow"
+      },
+      "413": {
+        "appletv": true,
+        "board": "smart",
+        "ladder": "yellow",
+        "name": "English 6",
+        "projector": true,
+        "seats": 15,
+        "teachercomp": true
+      },
+      "414": {
+        "ladder": "red"
+      },
+      "415": {
+        "appletv": false,
+        "board": "smart",
+        "ladder": "red",
+        "name": "English 5",
+        "projector": true,
+        "seats": 11,
+        "teachercomp": true
+      },
+      "416": {
+        "ladder": "red",
+        "name": "Arts"
+      },
+      "417": {
+        "ladder": "red",
+        "name": "Arts 2",
+        "projector": true
+      },
+      "418": {
+        "ladder": "red",
+        "name": "English 4"
+      },
+      "library": {
+        "ladder": "yellow"
+      }
     }
+  }
 }
