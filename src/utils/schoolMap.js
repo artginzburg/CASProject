@@ -1,6 +1,6 @@
 import { floorsQuantity, floorSelector, displayOpenedClass, selectedClass } from './constants.js';
 import { roomDisplay, display } from './elements.js';
-import { fetchSvg } from './util.js';
+import { fetchSvg } from './fetchSvg.js';
 
 export const schoolMap = {
   floor: {
@@ -107,7 +107,7 @@ export const schoolMap = {
   },
   loadAll: async function () {
     for (let level = floorsQuantity; level >= 1; level--) {
-      await fetchSvg(`levels/${level}.svg`, (theSvg) => {
+      await fetchSvg(`/src/images/${level}.svg`, (theSvg) => {
         document.body.appendChild(theSvg);
 
         const initialClass = 'initial';

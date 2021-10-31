@@ -1,17 +1,17 @@
-import { schoolMap } from './schoolMap.js';
+import { schoolMap } from '../utils/schoolMap.js';
 import {
   floorsQuantity,
   floorSelector,
   displayOpenedClass,
   selectedSelector,
-} from './constants.js';
-import { roomDisplay } from './elements.js';
+} from '../utils/constants.js';
+import { roomDisplay } from '../utils/elements.js';
 
 const digitString = 'Digit';
 const arrowString = 'Arrow';
 const escapeString = 'Escape';
 
-const structurePath = 'structure.json';
+const structurePath = '/src/utils/structure.json';
 
 document.addEventListener('DOMContentLoaded', schoolMap.loadAll);
 
