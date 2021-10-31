@@ -11,7 +11,7 @@ const digitString = 'Digit';
 const arrowString = 'Arrow';
 const escapeString = 'Escape';
 
-const structurePath = '/src/utils/structure.json';
+const structurePath = './src/utils/structure.json';
 
 document.addEventListener('DOMContentLoaded', schoolMap.loadAll);
 

@@ -107,7 +107,7 @@ export const schoolMap = {
   },
   loadAll: async function () {
     for (let level = floorsQuantity; level >= 1; level--) {
-      await fetchSvg(`/src/images/${level}.svg`, (theSvg) => {
+      await fetchSvg(`./src/images/${level}.svg`, (theSvg) => {
         document.body.appendChild(theSvg);
 
         const initialClass = 'initial';
